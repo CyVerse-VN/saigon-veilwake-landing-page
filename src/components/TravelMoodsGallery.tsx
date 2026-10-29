@@ -11,7 +11,7 @@ const moodMeta: Record<
 > = {
   daylight: {
     icon: Sun,
-    iconBg: "bg-amber-100 text-amber-600",
+    iconBg: "bg-amber-100 text-amber-800",
     bgClass: "bg-sky-50/70 hover:bg-sky-100/80",
     borderClass: "border-sky-200",
   },
@@ -29,7 +29,7 @@ const moodMeta: Record<
   },
   coastal: {
     icon: Waves,
-    iconBg: "bg-teal-100 text-teal-700",
+    iconBg: "bg-teal-100 text-teal-800",
     bgClass: "bg-teal-50/50 hover:bg-teal-100/60",
     borderClass: "border-teal-200/70",
   },

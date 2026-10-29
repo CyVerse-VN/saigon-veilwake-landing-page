@@ -11,12 +11,15 @@ import {
   CheckCircle2,
   AlertCircle,
   Users,
+  Sun,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useTheme } from "@/context/ThemeContext";
 import { projectTranslations } from "@/data/projectTranslations";
 
 export default function ProjectContent() {
   const { language, setLanguage } = useLanguage();
+  const { isNight, toggleTheme } = useTheme();
   const pt = projectTranslations[language];
 
   return (
@@ -39,6 +42,32 @@ export default function ProjectContent() {
             <span className="text-xs text-body-blue hidden sm:inline">
               {pt.nav.code}
             </span>
+
+            {/* Theme Toggle (Day / Night with Fireflies) */}
+            <button
+              onClick={toggleTheme}
+              title={
+                isNight
+                  ? language === "vi"
+                    ? "Trở về Ban Ngày"
+                    : "Switch to Daylight"
+                  : language === "vi"
+                  ? "Đánh thức Ký Giới Ban Đêm"
+                  : "Awaken Night Mode"
+              }
+              className={`p-2 rounded-full transition-all flex items-center justify-center border shadow-xs ${
+                isNight
+                  ? "bg-indigo-950/90 border-indigo-400/60 text-amber-300 hover:scale-105 ring-2 ring-indigo-400/30"
+                  : "bg-sky-50 border-sky-border text-indigo-700 hover:text-deep-blue hover:scale-105"
+              }`}
+              aria-label="Toggle Night Mode"
+            >
+              {isNight ? (
+                <Sun className="w-4 h-4 text-amber-300" />
+              ) : (
+                <Moon className="w-4 h-4 text-indigo-700" />
+              )}
+            </button>
 
             {/* Bilingual Switcher */}
             <div className="flex items-center p-0.5 rounded-full bg-sky-50 border border-sky-border text-xs font-semibold shadow-xs">

@@ -33,6 +33,18 @@ html {
   scroll-behavior: smooth;
 }
 
+/* WCAG 2.2 AA Accessible Focus Indicators */
+:focus-visible {
+  outline: 2px solid #14658E;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+html.night-mode :focus-visible {
+  outline-color: #927DDB;
+  outline-offset: 2px;
+}
+
 /* Custom scrollbar for refined editorial feel */
 ::-webkit-scrollbar {
   width: 8px;
@@ -68,4 +80,191 @@ html {
   border: 2px dashed #D5E8F2;
   background-color: #FFFDF9;
 }
+
+/* =========================================================================
+   NIGHT MODE (KÝ GIỚI — THE VEIL NIGHT THEME)
+   High-contrast, luminous nocturnal palette where content shines vibrantly
+   ========================================================================= */
+html.night-mode {
+  --page-bg: #060B14;
+  --white: #101A30;
+  --sky-50: #14203C;
+  --sky-100: #192A4E;
+  --sky-200: #243B6D;
+  --border-sky: rgba(99, 102, 241, 0.28);
+  --deep-blue: #FFFFFF;
+  --body-blue: #CBD5E1;
+  color-scheme: dark;
+}
+
+html.night-mode body {
+  background-color: #060B14;
+  color: #E2E8F0;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+html.night-mode ::-webkit-scrollbar-track {
+  background: #080D1A;
+}
+
+html.night-mode ::-webkit-scrollbar-thumb {
+  background: #2D3E6B;
+}
+
+html.night-mode ::-webkit-scrollbar-thumb:hover {
+  background: #927DDB;
+}
+
+/* Base Page Backgrounds & Navigation */
+html.night-mode .bg-page {
+  background-color: #060B14 !important;
+}
+
+html.night-mode header {
+  background-color: rgba(6, 11, 20, 0.92) !important;
+  border-bottom-color: rgba(99, 102, 241, 0.28) !important;
+  backdrop-filter: blur(14px) !important;
+}
+
+html.night-mode header nav a {
+  color: #E2E8F0 !important;
+}
+
+html.night-mode header nav a:hover {
+  color: #38BDF8 !important;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+}
+
+html.night-mode footer {
+  background: linear-gradient(180deg, #060B14 0%, #0B132B 100%) !important;
+  border-top-color: rgba(99, 102, 241, 0.25) !important;
+}
+
+/* Postcard cards and elevated content surfaces */
+html.night-mode .postcard-card {
+  background: linear-gradient(180deg, rgba(18, 28, 52, 0.96) 0%, rgba(13, 20, 38, 0.96) 100%) !important;
+  border: 1px solid rgba(99, 102, 241, 0.32) !important;
+  box-shadow: 0 16px 40px -6px rgba(0, 0, 0, 0.75), 0 0 24px -2px rgba(146, 125, 219, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  color: #F8FAFC !important;
+}
+
+html.night-mode .bg-white {
+  background-color: rgba(18, 28, 52, 0.94) !important;
+  border-color: rgba(99, 102, 241, 0.28) !important;
+  color: #F8FAFC !important;
+}
+
+/* Sub-containers & nested panels (clear layered hierarchy) */
+html.night-mode [class*="bg-sky-50"],
+html.night-mode [class*="bg-slate-50"] {
+  background-color: rgba(11, 18, 34, 0.8) !important;
+  border-color: rgba(99, 102, 241, 0.25) !important;
+  color: #E2E8F0 !important;
+}
+
+/* Radiant Accent Badges & Chips */
+html.night-mode [class*="bg-sky-100"] {
+  background-color: rgba(14, 165, 233, 0.18) !important;
+  border-color: rgba(56, 189, 248, 0.45) !important;
+  color: #38BDF8 !important;
+}
+
+html.night-mode [class*="bg-amber-100"],
+html.night-mode [class*="bg-amber-50"] {
+  background-color: rgba(245, 158, 11, 0.18) !important;
+  border-color: rgba(245, 158, 11, 0.45) !important;
+  color: #FDE047 !important;
+}
+
+html.night-mode [class*="bg-teal-100"],
+html.night-mode [class*="bg-teal-50"] {
+  background-color: rgba(20, 184, 166, 0.18) !important;
+  border-color: rgba(20, 184, 166, 0.45) !important;
+  color: #2DD4BF !important;
+}
+
+html.night-mode [class*="bg-indigo-100"],
+html.night-mode [class*="bg-indigo-50"] {
+  background-color: rgba(99, 102, 241, 0.22) !important;
+  border-color: rgba(168, 85, 247, 0.45) !important;
+  color: #C084FC !important;
+}
+
+html.night-mode [class*="bg-cream"] {
+  background-color: rgba(30, 24, 16, 0.75) !important;
+  border-color: rgba(231, 170, 89, 0.35) !important;
+  color: #FEF08A !important;
+}
+
+/* Luminous Primary Action Buttons */
+html.night-mode .bg-ocean-blue {
+  background: linear-gradient(135deg, #0284C7 0%, #0D9488 100%) !important;
+  box-shadow: 0 4px 20px rgba(2, 132, 199, 0.45) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+html.night-mode .bg-ocean-blue:hover {
+  background: linear-gradient(135deg, #0369A1 0%, #0F766E 100%) !important;
+  box-shadow: 0 6px 26px rgba(2, 132, 199, 0.65) !important;
+}
+
+/* Text Colors — Prominent, Crisp, High-Contrast */
+html.night-mode .text-deep-blue,
+html.night-mode h1,
+html.night-mode h2,
+html.night-mode h3,
+html.night-mode h4,
+html.night-mode h5 {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.06);
+}
+
+html.night-mode [class*="text-body-blue"],
+html.night-mode p {
+  color: #CBD5E1 !important;
+}
+
+html.night-mode strong {
+  color: #FFFFFF !important;
+}
+
+html.night-mode .text-ocean-blue {
+  color: #38BDF8 !important;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+}
+
+html.night-mode [class*="text-teal"] {
+  color: #2DD4BF !important;
+}
+
+html.night-mode [class*="text-amber"] {
+  color: #FDE047 !important;
+}
+
+html.night-mode [class*="text-indigo"],
+html.night-mode [class*="text-veil-lilac"],
+html.night-mode [class*="text-night-violet"] {
+  color: #C084FC !important;
+}
+
+/* Handwritten Cursive Quotes with Warm Starlight Glow */
+html.night-mode .font-handwriting {
+  color: #FDE68A !important;
+  text-shadow: 0 0 14px rgba(253, 230, 138, 0.45) !important;
+}
+
+/* Border overrides */
+html.night-mode [class*="border-sky-border"],
+html.night-mode [class*="border-sky-100"],
+html.night-mode [class*="border-sky-200"] {
+  border-color: rgba(99, 102, 241, 0.28) !important;
+}
+
+/* Section Dividers */
+html.night-mode section {
+  border-color: rgba(99, 102, 241, 0.22) !important;
+}
+
+
 

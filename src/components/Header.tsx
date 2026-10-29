@@ -3,12 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, PlayCircle, Globe } from "lucide-react";
+import { Menu, X, PlayCircle, Globe, Moon, Sun } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Header({ onOpenDemo }: { onOpenDemo?: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const { isNight, toggleTheme } = useTheme();
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/85 backdrop-blur-md border-b border-sky-border/70 transition-all duration-200">
@@ -66,8 +68,34 @@ export default function Header({ onOpenDemo }: { onOpenDemo?: () => void }) {
           </Link>
         </nav>
 
-        {/* Right Action: Demo CTA + Interactive Lang Switcher */}
-        <div className="hidden sm:flex items-center gap-4">
+        {/* Right Action: Demo CTA + Interactive Lang Switcher + Theme Toggle */}
+        <div className="hidden sm:flex items-center gap-3">
+          {/* Theme Toggle (Day / Night with Fireflies) */}
+          <button
+            onClick={toggleTheme}
+            title={
+              isNight
+                ? language === "vi"
+                  ? "Trở về Ban Ngày"
+                  : "Switch to Daylight"
+                : language === "vi"
+                ? "Đánh thức Ký Giới Ban Đêm"
+                : "Awaken Night Mode"
+            }
+            className={`p-2 rounded-full transition-all flex items-center justify-center border shadow-xs ${
+              isNight
+                ? "bg-indigo-950/90 border-indigo-400/60 text-amber-300 hover:scale-105 ring-2 ring-indigo-400/30"
+                : "bg-sky-50 border-sky-border text-indigo-700 hover:text-deep-blue hover:scale-105"
+            }`}
+            aria-label="Toggle Night Mode"
+          >
+            {isNight ? (
+              <Sun className="w-4 h-4 text-amber-300" />
+            ) : (
+              <Moon className="w-4 h-4 text-indigo-700" />
+            )}
+          </button>
+
           {/* Bilingual Language Switcher Button Group */}
           <div className="flex items-center p-0.5 rounded-full bg-sky-50 border border-sky-border text-xs font-semibold shadow-xs">
             <button
@@ -112,6 +140,23 @@ export default function Header({ onOpenDemo }: { onOpenDemo?: () => void }) {
 
         {/* Mobile menu trigger */}
         <div className="flex md:hidden items-center gap-2">
+          {/* Mobile Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className={`p-1.5 rounded-full border transition-all ${
+              isNight
+                ? "bg-indigo-950 border-indigo-400 text-amber-300"
+                : "bg-sky-50 border-sky-border text-indigo-700"
+            }`}
+            aria-label="Toggle Night Mode"
+          >
+            {isNight ? (
+              <Sun className="w-3.5 h-3.5 text-amber-300" />
+            ) : (
+              <Moon className="w-3.5 h-3.5 text-indigo-700" />
+            )}
+          </button>
+
           {/* Mobile Language Switcher */}
           <div className="flex items-center p-0.5 rounded-full bg-sky-50 border border-sky-border text-xs font-semibold">
             <button

@@ -141,11 +141,13 @@ export default function HeroSection({ onOpenDemo }: { onOpenDemo?: () => void })
                   </div>
                 )}
 
-                {/* Handwritten Note Annotation */}
-                <div className="absolute top-4 left-4 z-10 max-w-[200px] pointer-events-none">
-                  <p className="font-handwriting text-base sm:text-lg text-deep-blue/80 drop-shadow-xs rotate-[-3deg] leading-tight">
-                    {t.hero.handwrittenNote}
-                  </p>
+                {/* Handwritten Note Annotation with Protective Glass Backing */}
+                <div className="absolute top-4 left-4 z-10 max-w-[240px] pointer-events-none">
+                  <span className="inline-block px-3 py-1.5 rounded-2xl bg-white/90 backdrop-blur-md shadow-xs border border-white/60">
+                    <p className="font-handwriting text-base sm:text-lg text-deep-blue rotate-[-2deg] leading-tight font-semibold">
+                      {t.hero.handwrittenNote}
+                    </p>
+                  </span>
                 </div>
               </div>
             </div>

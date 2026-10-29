@@ -57,10 +57,10 @@ export default function BadgePersonalizer() {
           <div className="w-[240px] sm:w-[270px] bg-white rounded-2xl p-3 shadow-floating border border-amber-200/60 relative overflow-hidden transition-all duration-300">
             {/* Header Stamp Detail */}
             <div className="flex items-center justify-between border-b border-amber-100 pb-2 mb-2">
-              <span className="text-[9px] font-bold text-amber-800 tracking-wider uppercase">
+              <span className="text-[9px] font-bold text-amber-900 tracking-wider uppercase">
                 {t.badgePersonalizer.stampHeader}
               </span>
-              <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 font-mono font-bold">
+              <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-50 text-amber-900 font-mono font-bold border border-amber-200">
                 {t.badgePersonalizer.stampNo}
               </span>
             </div>

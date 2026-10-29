@@ -124,24 +124,34 @@ export default function InteractiveAppPreview() {
                   </div>
                 </button>
 
-                {/* Discovery Bottom Card */}
+                {/* Discovery Bottom Card (Editorial Travel UI) */}
                 {selectedPlace ? (
-                  <div className="absolute bottom-20 left-3 right-3 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-lg border border-sky-border animate-in slide-in-from-bottom-2">
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <span className="text-[9px] font-bold uppercase tracking-wider text-ocean-blue">
-                          {t.appPreview.postOfficeBadge}
-                        </span>
-                        <h4 className="text-xs font-bold text-deep-blue">
+                  <div className="absolute bottom-20 left-3 right-3 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 shadow-lg border border-sky-border animate-in slide-in-from-bottom-2">
+                    <div className="flex items-start gap-2.5">
+                      <div className="relative w-14 h-14 rounded-xl overflow-hidden shrink-0 border border-sky-100 shadow-xs">
+                        <Image
+                          src="/assets/hero_post_office_day_v1.webp"
+                          alt="Bưu điện Trung tâm"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[9px] font-bold uppercase tracking-wider text-ocean-blue truncate">
+                            {t.appPreview.postOfficeBadge}
+                          </span>
+                          <span className="text-[9px] px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 font-bold shrink-0">
+                            {t.appPreview.readyBadge}
+                          </span>
+                        </div>
+                        <h4 className="text-xs font-bold text-deep-blue truncate mt-0.5">
                           {t.appPreview.postOfficeTitle}
                         </h4>
-                        <p className="text-[10px] text-body-blue mt-0.5">
+                        <p className="text-[10px] text-body-blue truncate">
                           {t.appPreview.postOfficeDistance}
                         </p>
                       </div>
-                      <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 font-bold shrink-0">
-                        {t.appPreview.readyBadge}
-                      </span>
                     </div>
                     <div className="mt-2 flex items-center justify-between pt-1.5 border-t border-sky-100">
                       <span className="text-[9px] text-teal-700 font-semibold flex items-center gap-1">
@@ -149,98 +159,178 @@ export default function InteractiveAppPreview() {
                       </span>
                       <button
                         onClick={() => setActiveTab("journey")}
-                        className="text-[10px] px-2.5 py-1 rounded-full bg-ocean-blue text-white font-semibold"
+                        className="text-[10px] px-3 py-1 rounded-full bg-ocean-blue text-white font-semibold hover:bg-deep-blue transition-all shadow-xs"
                       >
                         {t.appPreview.btnStartQuest}
                       </button>
                     </div>
                   </div>
                 ) : (
-                  <div className="absolute bottom-20 left-3 right-3 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-lg border border-sky-border">
-                    <h4 className="text-xs font-bold text-deep-blue">{t.appPreview.notreDameTitle}</h4>
-                    <p className="text-[10px] text-body-blue mt-0.5">
-                      {t.appPreview.notreDameNightNote}
-                    </p>
+                  <div className="absolute bottom-20 left-3 right-3 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 shadow-lg border border-sky-border animate-in slide-in-from-bottom-2">
+                    <div className="flex items-start gap-2.5">
+                      <div className="relative w-14 h-14 rounded-xl overflow-hidden shrink-0 border border-sky-100 shadow-xs">
+                        <Image
+                          src="/assets/notre_dame_day_aerial.webp"
+                          alt="Nhà thờ Đức Bà"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <span className="text-[9px] font-bold uppercase tracking-wider text-amber-800 block truncate">
+                          Di sản tâm linh Sài Gòn
+                        </span>
+                        <h4 className="text-xs font-bold text-deep-blue truncate mt-0.5">
+                          {t.appPreview.notreDameTitle}
+                        </h4>
+                        <p className="text-[10px] text-body-blue mt-0.5 leading-snug">
+                          {t.appPreview.notreDameNightNote}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
             )}
 
-            {/* 2. JOURNEY TAB (HÀNH TRÌNH) */}
+            {/* 2. JOURNEY TAB (HÀNH TRÌNH — EDITORIAL TRAVEL ITINERARY) */}
             {activeTab === "journey" && (
-              <div className="p-4 h-full bg-white overflow-y-auto">
-                <span className="text-[10px] font-bold text-ocean-blue uppercase">
-                  {t.appPreview.journeyTitle}
-                </span>
+              <div className="p-3.5 h-full bg-white overflow-y-auto">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold text-ocean-blue uppercase tracking-wider">
+                    {t.appPreview.journeyTitle}
+                  </span>
+                  <span className="text-[9px] px-2 py-0.5 rounded-full bg-sky-50 text-ocean-blue font-bold border border-sky-200">
+                    2 Chặng Thực Địa
+                  </span>
+                </div>
                 <h4 className="text-sm font-bold text-deep-blue mt-0.5">
                   {t.appPreview.journeySub}
                 </h4>
                 <div className="mt-3 space-y-2.5">
-                  <div className="p-2.5 rounded-xl border border-ocean-blue/30 bg-sky-50/70">
-                    <div className="flex items-center justify-between text-[11px] font-bold text-deep-blue">
-                      <span>{t.appPreview.stop1Day}</span>
-                      <span className="text-[9px] text-ocean-blue">{t.appPreview.stop1DayTag}</span>
+                  {/* Stop 1 */}
+                  <div className="p-2.5 rounded-2xl border border-sky-border bg-sky-50/60 flex items-start gap-2.5 shadow-2xs">
+                    <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-amber-200 shadow-2xs">
+                      <Image
+                        src="/assets/chapter0_stop1_v1.webp"
+                        alt={t.appPreview.stop1Day}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                    <p className="text-[10px] text-body-blue mt-1">
-                      {t.appPreview.stop1DayDesc}
-                    </p>
-                    <div className="mt-2 text-[9px] font-semibold text-teal-700">
-                      {t.appPreview.stop1DayReward}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between text-[11px] font-bold text-deep-blue">
+                        <span className="truncate">{t.appPreview.stop1Day}</span>
+                        <span className="text-[9px] px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 font-bold shrink-0">
+                          {t.appPreview.stop1DayTag}
+                        </span>
+                      </div>
+                      <p className="text-[10px] text-body-blue mt-0.5 leading-snug">
+                        {t.appPreview.stop1DayDesc}
+                      </p>
+                      <div className="mt-1.5 text-[9px] font-semibold text-teal-700 flex items-center gap-1">
+                        <CheckCircle2 className="w-2.5 h-2.5" />
+                        <span className="truncate">{t.appPreview.stop1DayReward}</span>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="p-2.5 rounded-xl border border-sky-border bg-slate-50/70 opacity-90">
-                    <div className="flex items-center justify-between text-[11px] font-bold text-deep-blue">
-                      <span>{t.appPreview.stop2Night}</span>
-                      <span className="text-[9px] text-indigo-700">{t.appPreview.stop2NightTag}</span>
+                  {/* Stop 2 */}
+                  <div className="p-2.5 rounded-2xl border border-indigo-100 bg-indigo-50/50 flex items-start gap-2.5 shadow-2xs">
+                    <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-indigo-200 shadow-2xs">
+                      <Image
+                        src="/assets/chapter0_stop2_v1.webp"
+                        alt={t.appPreview.stop2Night}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                    <p className="text-[10px] text-body-blue mt-1">
-                      {t.appPreview.stop2NightDesc}
-                    </p>
-                    <div className="mt-2 text-[9px] font-semibold text-veil-lilac">
-                      {t.appPreview.stop2NightReward}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between text-[11px] font-bold text-deep-blue">
+                        <span className="truncate">{t.appPreview.stop2Night}</span>
+                        <span className="text-[9px] px-1.5 py-0.2 rounded bg-indigo-100 text-indigo-800 font-bold shrink-0">
+                          {t.appPreview.stop2NightTag}
+                        </span>
+                      </div>
+                      <p className="text-[10px] text-body-blue mt-0.5 leading-snug">
+                        {t.appPreview.stop2NightDesc}
+                      </p>
+                      <div className="mt-1.5 text-[9px] font-semibold text-veil-lilac flex items-center gap-1">
+                        <Sparkles className="w-2.5 h-2.5" />
+                        <span className="truncate">{t.appPreview.stop2NightReward}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* 3. JOURNAL TAB (NHẬT KÝ) */}
+            {/* 3. JOURNAL TAB (NHẬT KÝ — TRAVEL FIELD NOTEBOOK) */}
             {activeTab === "journal" && (
-              <div className="p-4 h-full bg-cream/30 overflow-y-auto">
-                <span className="text-[10px] font-bold text-amber-700 uppercase">
+              <div className="p-3.5 h-full bg-[#FFFDF9] overflow-y-auto border-l border-amber-100">
+                <span className="text-[10px] font-bold text-amber-800 uppercase tracking-wider block">
                   {t.appPreview.journalHeader}
                 </span>
                 <h4 className="text-sm font-bold text-deep-blue mt-0.5">
                   {t.appPreview.journalTitle}
                 </h4>
                 <div className="mt-3 space-y-2">
-                  <div className="p-2 rounded-xl bg-white border border-amber-200/60 shadow-sm text-[10px]">
-                    <span className="font-bold text-deep-blue">1:</span> {t.appPreview.clue1}
+                  <div className="p-2.5 rounded-xl bg-white border border-amber-200/70 shadow-2xs text-[10px]">
+                    <span className="font-bold text-amber-900 block mb-0.5 font-mono">✦ MANH MỐI 01</span>
+                    <p className="text-body-blue leading-relaxed">{t.appPreview.clue1}</p>
                   </div>
-                  <div className="p-2 rounded-xl bg-white border border-amber-200/60 shadow-sm text-[10px]">
-                    <span className="font-bold text-deep-blue">2:</span> {t.appPreview.clue2}
+                  <div className="p-2.5 rounded-xl bg-white border border-amber-200/70 shadow-2xs text-[10px]">
+                    <span className="font-bold text-indigo-900 block mb-0.5 font-mono">✦ MANH MỐI 02</span>
+                    <p className="text-body-blue leading-relaxed">{t.appPreview.clue2}</p>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* 4. PASSPORT TAB (HỘ CHIẾU KÝ ỨC) */}
+            {/* 4. PASSPORT TAB (HỘ CHIẾU KÝ ỨC — COMMEMORATIVE SOUVENIRS) */}
             {activeTab === "passport" && (
-              <div className="p-4 h-full bg-white overflow-y-auto text-center">
-                <span className="text-[10px] font-bold text-ocean-blue uppercase">
-                  {t.appPreview.passportHeader}
-                </span>
+              <div className="p-3.5 h-full bg-white overflow-y-auto">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold text-ocean-blue uppercase tracking-wider">
+                    {t.appPreview.passportHeader}
+                  </span>
+                  <span className="text-[9px] px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 font-bold border border-teal-200">
+                    Bộ Sưu Tập
+                  </span>
+                </div>
                 <h4 className="text-sm font-bold text-deep-blue mt-0.5">
                   {t.appPreview.passportTitle}
                 </h4>
                 <div className="mt-3 grid grid-cols-2 gap-2 text-left">
-                  <div className="p-2 rounded-xl border border-sky-200 bg-sky-50 text-[10px]">
-                    <span className="font-bold text-ocean-blue block">{t.appPreview.badgeTitle}</span>
-                    <span className="text-[9px] text-teal-700">{t.appPreview.unlockedSample}</span>
+                  {/* Unlocked Souvenir Stamp */}
+                  <div className="p-2 rounded-2xl border border-amber-200 bg-amber-50/40 text-[10px] flex flex-col items-center text-center shadow-2xs">
+                    <div className="relative w-11 h-11 rounded-lg overflow-hidden my-1 border border-amber-300 shadow-2xs">
+                      <Image
+                        src="/assets/badge_default_v1.webp"
+                        alt="Bưu điện 1891"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <span className="font-bold text-deep-blue block text-[10px] truncate w-full">
+                      {t.appPreview.badgeTitle}
+                    </span>
+                    <span className="text-[8px] text-teal-700 font-bold mt-0.5 flex items-center gap-0.5">
+                      <CheckCircle2 className="w-2.5 h-2.5" /> {t.appPreview.unlockedSample}
+                    </span>
                   </div>
-                  <div className="p-2 rounded-xl border border-dashed border-sky-200 bg-slate-50 text-[10px] text-body-blue flex items-center justify-center gap-1">
-                    <Lock className="w-3 h-3" /> {t.appPreview.lockedSample}
+
+                  {/* Locked Stamp Slot */}
+                  <div className="p-2 rounded-2xl border border-dashed border-sky-200 bg-slate-50 text-[10px] text-body-blue flex flex-col items-center justify-center text-center">
+                    <div className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center text-body-blue/60 my-1">
+                      <Lock className="w-4 h-4" />
+                    </div>
+                    <span className="text-[9px] text-body-blue font-semibold">
+                      Chặng Kế Tiếp
+                    </span>
+                    <span className="text-[8px] text-body-blue/60">
+                      {t.appPreview.lockedSample}
+                    </span>
                   </div>
                 </div>
               </div>
