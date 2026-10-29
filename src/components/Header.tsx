@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Compass, PlayCircle, Globe } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, PlayCircle, Globe } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header({ onOpenDemo }: { onOpenDemo?: () => void }) {
@@ -13,15 +14,22 @@ export default function Header({ onOpenDemo }: { onOpenDemo?: () => void }) {
     <header className="sticky top-0 z-50 w-full bg-white/85 backdrop-blur-md border-b border-sky-border/70 transition-all duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center text-ocean-blue group-hover:scale-105 transition-transform">
-            <Compass className="w-5 h-5 text-ocean-blue" />
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="relative w-8 h-8 flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
+            <Image
+              src="/assets/logo_emblem.png"
+              alt="Saigon: Veilwake Emblem"
+              width={34}
+              height={34}
+              className="object-contain"
+              priority
+            />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold tracking-wider text-base sm:text-lg text-deep-blue">
+            <span className="font-bold tracking-wider text-base sm:text-lg text-deep-blue leading-tight">
               SAIGON: VEILWAKE
             </span>
-            <span className="text-[10px] tracking-widest uppercase text-body-blue/80 -mt-1 font-medium">
+            <span className="text-[10px] tracking-widest uppercase text-body-blue/80 font-medium -mt-0.5">
               {t.nav.brandTagline}
             </span>
           </div>

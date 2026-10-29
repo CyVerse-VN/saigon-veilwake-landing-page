@@ -59,7 +59,7 @@ export default function ChapterZeroTimeline() {
             <div className="relative h-48 rounded-xl overflow-hidden my-3 border border-amber-100 shadow-sm">
               <Image
                 src="/assets/chapter0_stop1_v1.webp"
-                alt="Chặng 1: Bưu điện Trung tâm Sài Gòn"
+                alt={t.chapterZero.stage1Title}
                 fill
                 className="object-cover object-center"
               />
@@ -110,7 +110,7 @@ export default function ChapterZeroTimeline() {
             <div className="relative h-48 rounded-xl overflow-hidden my-3 border border-indigo-100 shadow-sm">
               <Image
                 src="/assets/chapter0_stop2_v1.webp"
-                alt="Chặng 2: Khu vực ngoài Nhà thờ Đức Bà"
+                alt={t.chapterZero.stage2Title}
                 fill
                 className="object-cover object-center"
               />

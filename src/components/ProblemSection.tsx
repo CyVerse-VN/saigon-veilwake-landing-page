@@ -43,7 +43,7 @@ export default function ProblemSection() {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <span className="absolute bottom-2 left-2 text-[10px] px-2.5 py-0.5 rounded-full bg-white/90 text-deep-blue font-bold backdrop-blur-xs shadow-xs">
-                    Ký ức thực địa
+                    {t.problem.postcardTag1}
                   </span>
                 </div>
                 <div className="relative h-44 sm:h-52 rounded-2xl overflow-hidden border border-sky-100 shadow-sm group">
@@ -54,7 +54,7 @@ export default function ProblemSection() {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <span className="absolute bottom-2 left-2 text-[10px] px-2.5 py-0.5 rounded-full bg-white/90 text-deep-blue font-bold backdrop-blur-xs shadow-xs">
-                    Dấu ấn di sản
+                    {t.problem.postcardTag2}
                   </span>
                 </div>
               </div>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Compass, Youtube, Instagram, MapPin } from "lucide-react";
+import { Youtube, Instagram, MapPin } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
@@ -34,9 +34,15 @@ export default function Footer() {
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Logo & Tagline */}
           <div className="flex flex-col items-center gap-2">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-sky-200/60 flex items-center justify-center text-ocean-blue">
-                <Compass className="w-5 h-5 text-ocean-blue" />
+            <div className="flex items-center gap-2.5">
+              <div className="relative w-8 h-8 flex items-center justify-center">
+                <Image
+                  src="/assets/logo_emblem.png"
+                  alt="Saigon: Veilwake Emblem"
+                  width={34}
+                  height={34}
+                  className="object-contain"
+                />
               </div>
               <span className="font-bold tracking-wider text-xl text-deep-blue">
                 SAIGON: VEILWAKE

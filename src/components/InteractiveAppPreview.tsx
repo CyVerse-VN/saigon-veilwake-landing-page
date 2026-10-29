@@ -9,7 +9,6 @@ import {
   Award,
   Sparkles,
   Camera,
-  MessageCircle,
   X,
   MapPin,
   CheckCircle2,
@@ -68,7 +67,13 @@ export default function InteractiveAppPreview() {
           {/* Top In-App Header */}
           <div className="px-4 py-2 flex items-center justify-between bg-white/70 backdrop-blur-sm border-b border-sky-border/60 z-10">
             <div className="flex items-center gap-1.5">
-              <Compass className="w-4 h-4 text-ocean-blue" />
+              <Image
+                src="/assets/logo_emblem.png"
+                alt="Emblem"
+                width={18}
+                height={18}
+                className="object-contain"
+              />
               <span className="text-xs font-bold text-deep-blue tracking-wide">
                 SAIGON: VEILWAKE
               </span>
@@ -246,18 +251,29 @@ export default function InteractiveAppPreview() {
               <div className="absolute inset-x-3 bottom-20 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-xl border border-sky-border z-30 animate-in fade-in duration-200">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-full bg-sky-200 flex items-center justify-center text-ocean-blue font-bold text-[10px]">
-                      NPC
+                    <div className="w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center p-0.5 border border-sky-200 overflow-hidden shrink-0">
+                      <Image
+                        src="/assets/npc_kiri.png"
+                        alt="NPC Kiri"
+                        width={30}
+                        height={30}
+                        className="object-contain"
+                      />
                     </div>
-                    <span className="text-xs font-bold text-deep-blue">
-                      {t.appPreview.npcCompanion}
-                    </span>
+                    <div>
+                      <span className="text-xs font-bold text-deep-blue block leading-tight">
+                        Kiri
+                      </span>
+                      <span className="text-[9px] text-ocean-blue font-semibold">
+                        {t.appPreview.npcCompanion}
+                      </span>
+                    </div>
                   </div>
                   <button
                     onClick={() => setNpcOpen(false)}
                     className="p-1 rounded-full hover:bg-sky-50 text-body-blue"
                   >
-                    <X className="w-3 h-3" />
+                    <X className="w-3.5 h-3.5" />
                   </button>
                 </div>
                 <p className="text-[11px] text-body-blue mt-2 leading-relaxed bg-sky-50/70 p-2 rounded-lg">
@@ -383,11 +399,17 @@ export default function InteractiveAppPreview() {
                 setNpcOpen(!npcOpen);
                 setKyMonOpen(false);
               }}
-              title="NPC Đồng hành"
-              className="flex flex-col items-center gap-0.5 text-body-blue hover:text-ocean-blue transition-colors"
+              title={t.appPreview.npcCompanion}
+              className="flex flex-col items-center gap-0.5 text-body-blue hover:text-ocean-blue transition-colors group cursor-pointer"
             >
-              <div className="w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center text-ocean-blue shadow-sm">
-                <MessageCircle className="w-4 h-4" />
+              <div className="w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center p-0.5 shadow-sm border border-sky-200 overflow-hidden group-hover:scale-105 transition-transform">
+                <Image
+                  src="/assets/npc_kiri.png"
+                  alt="NPC Kiri"
+                  width={30}
+                  height={30}
+                  className="object-contain"
+                />
               </div>
               <span className="text-[9px] font-bold">{t.appPreview.ctrlNPC}</span>
             </button>
@@ -398,11 +420,17 @@ export default function InteractiveAppPreview() {
                 setKyMonOpen(!kyMonOpen);
                 setNpcOpen(false);
               }}
-              title="Ký Môn Menu"
+              title={t.appPreview.ctrlKyMon}
               className="relative -top-3 flex flex-col items-center group cursor-pointer"
             >
-              <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-ocean-blue to-teal text-white flex items-center justify-center shadow-lg ring-4 ring-white group-hover:scale-105 transition-transform">
-                <Compass className={`w-6 h-6 transition-transform ${kyMonOpen ? "rotate-45" : ""}`} />
+              <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-ocean-blue to-teal text-white flex items-center justify-center shadow-lg ring-4 ring-white group-hover:scale-105 transition-transform p-2.5">
+                <Image
+                  src="/assets/logo_emblem.png"
+                  alt={t.appPreview.ctrlKyMon}
+                  width={26}
+                  height={26}
+                  className={`object-contain brightness-0 invert transition-transform ${kyMonOpen ? "rotate-45" : ""}`}
+                />
               </div>
               <span className="text-[10px] font-bold text-deep-blue mt-0.5">
                 {t.appPreview.ctrlKyMon}
@@ -416,8 +444,8 @@ export default function InteractiveAppPreview() {
                 setKyMonOpen(false);
                 setNpcOpen(false);
               }}
-              title="Ống kính Ký Giới AR"
-              className="flex flex-col items-center gap-0.5 text-body-blue hover:text-veil-lilac transition-colors"
+              title={t.appPreview.ctrlAR}
+              className="flex flex-col items-center gap-0.5 text-body-blue hover:text-veil-lilac transition-colors cursor-pointer"
             >
               <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 shadow-sm">
                 <Camera className="w-4 h-4" />

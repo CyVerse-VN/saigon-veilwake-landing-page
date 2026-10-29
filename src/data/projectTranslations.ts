@@ -1,0 +1,291 @@
+export const projectTranslations = {
+  vi: {
+    nav: {
+      backHome: "Quay lại Trang Chủ",
+      badge: "HIST 2026 · Project Dossier",
+      code: "Mã hồ sơ: SVW-2026-MVP",
+      toggleLangTitle: "Chuyển sang Tiếng Anh",
+    },
+    header: {
+      eyebrow: "Tài liệu Đề Xuất Đổi Mới Sáng Tạo Du Lịch",
+      title: "Hồ Sơ Dự Án: Saigon: Veilwake",
+      desc: "Nền tảng du lịch đô thị tương tác kết hợp khám phá văn hóa thực địa, công nghệ thực tế tăng cường (AR) và hộ chiếu kỷ niệm số tại Thành phố Hồ Chí Minh.",
+    },
+    toc: {
+      title: "Mục lục tài liệu",
+      summary: "1. Tóm tắt giải pháp (Executive Summary)",
+      problem: "2. Vấn đề & Giả thuyết nghiên cứu",
+      loop: "3. Vòng lặp trải nghiệm (Experience Loop)",
+      tourismValue: "4. Ba trụ cột giá trị du lịch",
+      differentiation: "5. Điểm khác biệt & Hệ thống nhận diện",
+      mvpScope: "6. Phạm vi MVP & Giới hạn thực địa",
+      roadmap: "7. Tầm nhìn mở rộng (Scalability)",
+      team: "8. Đội ngũ & Thông tin liên hệ",
+      honestyTitle: "Nguyên tắc trung thực",
+      honestyDesc:
+        "Tài liệu phân định rõ ràng giữa tính năng cốt lõi đã chạy thực tế trong Chapter Zero và các định hướng mở rộng trong tương lai.",
+    },
+    summary: {
+      title: "1. Tóm Tắt Giải Pháp (Executive Summary)",
+      lead: "là ứng dụng di động dẫn dắt du khách và giới trẻ tự mình khám phá chiều sâu văn hóa của Sài Gòn bằng cách biến không gian thành phố thành một hành trình phiêu lưu tương tác:",
+      dayTitle: "Ban ngày:",
+      dayDesc:
+        "Bản đồ định vị GPS đưa người chơi đến các địa danh kiến trúc có thật, quan sát chi tiết lịch sử để giải thử thách và nhận huy hiệu kỷ niệm cá nhân hóa.",
+      nightTitle: "Ban đêm:",
+      nightDesc:
+        "Mở ra lớp kể chuyện kỳ ảo (Ký Giới) thông qua camera AR, giải mã các thông điệp bị bỏ quên và đánh thức Cảnh Ký Ức trong không gian an toàn.",
+      audienceTitle: "Đối tượng phục vụ:",
+      audienceDesc:
+        "Khách du lịch tự túc, nhóm bạn trẻ tại TP.HCM, cộng đồng yêu văn hóa lịch sử và các đơn vị xúc tiến điểm đến.",
+    },
+    problem: {
+      title: "2. Vấn Đề & Giả Thuyết Nghiên Cứu",
+      realityTitle: "Thực trạng quan sát",
+      realityDesc:
+        "Nhiều trải nghiệm tham quan đô thị hiện nay dừng lại ở việc check-in chụp ảnh vài phút rồi rời đi. Du khách ít có cơ hội hoặc động lực tương tác sâu với giá trị lịch sử và câu chuyện của điểm đến.",
+      hypothesisTitle: "Giả thuyết của Veilwake",
+      hypothesisDesc:
+        "Nếu việc tìm hiểu văn hóa được chuyển hóa thành cơ chế giải đố gắn liền với quan sát thực địa và phần thưởng là kỷ niệm số cá nhân, người chơi sẽ chủ động khám phá lâu hơn và trân trọng di sản hơn.",
+    },
+    loop: {
+      title: "3. Vòng Lặp Trải Nghiệm (Experience Loop)",
+      step1: "BƯỚC 1",
+      step1Desc: "Bản đồ gợi ý địa danh",
+      step2: "BƯỚC 2",
+      step2Desc: "Quan sát & giải câu đố",
+      step3: "BƯỚC 3",
+      step3Desc: "Nhận Huy hiệu & Mảnh Ký Ức",
+      step4: "BƯỚC 4",
+      step4Desc: "AR định vị ban đêm",
+      step5: "BƯỚC 5",
+      step5Desc: "Lưu Cảnh Ký Ức Hộ Chiếu",
+      note: "* Vòng lặp khép kín thúc đẩy du khách tham quan cả ban ngày lẫn buổi tối một cách tự nhiên.",
+    },
+    tourismValue: {
+      title: "4. Ba Trụ Cột Giá Trị Cho Du Lịch TP.HCM",
+      p1Title: "1. Phát triển du lịch văn hóa sáng tạo",
+      p1Desc:
+        "Giúp các công trình di sản (như Bưu điện Trung tâm Sài Gòn, Nhà thờ Đức Bà) giao tiếp với thế hệ trẻ qua ngôn ngữ kể chuyện hiện đại, không khô cứng.",
+      p2Title: "2. Thúc đẩy kinh tế & du lịch đêm an toàn",
+      p2Desc:
+        "Đưa ra lý do để du khách quay lại điểm đến vào ban đêm với kịch bản giải đố và trải nghiệm AR, gia tăng mức độ gắn kết với các tuyến phố đi bộ lân cận.",
+      p3Title: "3. Đẩy mạnh chuyển đổi số ngành du lịch",
+      p3Desc:
+        "Ứng dụng định vị GPS, markerless AR và số hóa kỷ niệm du lịch mà không cần lắp đặt phần cứng tốn kém hoặc gây tác động tiêu cực đến di tích.",
+    },
+    differentiation: {
+      title: "5. Điểm Khác Biệt & Hệ Thống Nhận Diện (Brand Identity)",
+      diff1Title: "Không phải game thuần túy, không phải hướng dẫn viên khô khan:",
+      diff1Desc:
+        "Veilwake đứng ở giao điểm giữa hướng dẫn du lịch tự túc và trò chơi nhập vai đô thị nhẹ nhàng (light urban adventure).",
+      diff2Title: "Tôn trọng tuyệt đối di sản thực địa:",
+      diff2Desc:
+        "Mọi thử thách đều đòi hỏi người chơi nhìn vào kiến trúc thật, không chăm chăm dán mắt vào điện thoại.",
+      diff3Title: "Huy hiệu bưu thiếp cá nhân hóa:",
+      diff3Desc:
+        "Thay vì chỉ nhận ảnh minh họa tĩnh, người chơi được lồng bức ảnh do chính mình chụp vào khung tem lưu niệm độc bản.",
+      brandSystemBadge: "Hệ Thống Nhận Diện Thương Hiệu",
+      brandSystemTitle: "Ý Tưởng Biểu Tượng & Linh Vật Kiri",
+      designSystemTag: "Design System SVW-2026",
+      elementsHeading: "5 Yếu tố cấu thành Cánh Cổng Ký Môn:",
+      el1Title: "Mặt Trời:",
+      el1Desc: "Thế giới thực tại · Ban ngày · Khám phá di sản sống động.",
+      el2Title: "Mặt Trăng:",
+      el2Desc: "Thế giới Ký Giới · Ban đêm · Đánh thức câu chuyện tiềm ẩn.",
+      el3Title: "Cánh Cổng Vòm:",
+      el3Desc: "Kết nối hai thế giới, gợi dáng dấp vòm kiến trúc thuộc địa Sài Gòn.",
+      el4Title: "Dòng Chảy:",
+      el4Desc: "Hành trình khám phá, uốn lượn như dòng sông Sài Gòn.",
+      el5Title: "Ánh Sáng:",
+      el5Desc: "Điểm tụ của ký ức, hy vọng và những điều kỳ diệu chưa được kể.",
+      mascotBadge: "Linh Vật Đồng Hành",
+      mascotName: "NPC Kiri",
+      mascotDesc:
+        "Chú chim nhỏ dẫn dắt du khách qua các câu chuyện văn hóa, tạo cảm giác thân thiện, gắn kết mọi lứa tuổi.",
+      appIconBadge: "Biểu Tượng Ứng Dụng",
+      appIconName: "Saigon: Veilwake App",
+      appIconDesc:
+        "Icon squircle hiện đại với vòm cổng Ký Môn và dòng thời gian Nhật/Nguyệt chuyển sắc tinh tế.",
+    },
+    mvpScope: {
+      title: "6. Phạm Vi MVP & Giới Hạn Thử Nghiệm",
+      canonTitle: "Chapter Zero — Lá Thư Chưa Từng Đến:",
+      canonDescPart1: "MVP tập trung trọn vẹn vào 2 địa điểm biểu tượng của Sài Gòn:",
+      canonDescDay: "Bưu điện Trung tâm TP.HCM",
+      canonDescPart2: "(ban ngày) và",
+      canonDescNight: "Khu vực công cộng ngoài Nhà thờ Đức Bà",
+      canonDescPart3: "(buổi tối).",
+      stop1Caption: "Chặng 1: Bưu điện Trung tâm (Ban ngày)",
+      stop2Caption: "Chặng 2: Nhà thờ Đức Bà (Buổi tối)",
+      safetyTitle: "Giới hạn kỹ thuật & an toàn thực địa:",
+      safetyDesc:
+        "Yêu cầu điện thoại hỗ trợ ARCore (Android); chỉ kích hoạt AR tại khu vực dừng chân an toàn ngoài vỉa hè công cộng; không áp dụng tính năng game lên khu vực tôn giáo/nghi lễ.",
+    },
+    roadmap: {
+      title: "7. Tầm Nhìn Mở Rộng (Scalability Roadmap)",
+      phase1Tag: "Giai đoạn 1",
+      phase1Title: "Hoàn thiện Chapter Zero",
+      phase1Desc: "Khảo sát trải nghiệm người dùng thực tế và tinh chỉnh câu đố văn hóa.",
+      phase2Tag: "Giai đoạn 2",
+      phase2Title: "Mở rộng mạng lưới di sản",
+      phase2Desc: "Tuyến ẩm thực văn hóa Chợ Lớn (Quận 5), bảo tàng mỹ thuật và làng nghề.",
+      phase3Tag: "Giai đoạn 3",
+      phase3Title: "Liên kết vùng (Vũng Tàu)",
+      phase3Desc: "Tuyến hành trình khám phá ngọn hải đăng và cảnh quan ven biển.",
+    },
+    team: {
+      title: "8. Đội Ngũ Thực Hiện & Liên Hệ",
+      teamName: "Saigon: Veilwake Project Team",
+      competition: "Dự án dự thi Cuộc thi Sáng tạo Khởi nghiệp Du lịch HIST 2026",
+      trackLabel: "Lĩnh vực dự thi:",
+      trackValue: "Du lịch thông minh & Đổi mới sáng tạo văn hóa",
+      statusLabel: "Tình trạng dự án:",
+      statusValue: "Prototype & Field Validation Phase",
+    },
+  },
+  en: {
+    nav: {
+      backHome: "Back to Home",
+      badge: "HIST 2026 · Project Dossier",
+      code: "Dossier Code: SVW-2026-MVP",
+      toggleLangTitle: "Switch to Vietnamese",
+    },
+    header: {
+      eyebrow: "Tourism Innovation Proposal Document",
+      title: "Project Dossier: Saigon: Veilwake",
+      desc: "Interactive urban cultural tourism platform combining physical fieldwork discovery, augmented reality (AR), and digital keepsake passports in Ho Chi Minh City.",
+    },
+    toc: {
+      title: "Document Index",
+      summary: "1. Executive Summary",
+      problem: "2. Problem & Research Hypothesis",
+      loop: "3. Experience Loop",
+      tourismValue: "4. Three Tourism Value Pillars",
+      differentiation: "5. Differentiation & Brand Identity",
+      mvpScope: "6. MVP Scope & Field Test Limits",
+      roadmap: "7. Scalability Roadmap",
+      team: "8. Team & Contact Info",
+      honestyTitle: "Transparency Principle",
+      honestyDesc:
+        "This document transparently distinguishes between core features verified in Chapter Zero fieldwork and future expansion roadmap.",
+    },
+    summary: {
+      title: "1. Executive Summary",
+      lead: "is a mobile platform empowering travelers and youth to explore the cultural depths of Saigon by transforming urban spaces into an interactive adventure:",
+      dayTitle: "Daylight:",
+      dayDesc:
+        "GPS-guided map directs players to physical architectural landmarks to observe historic details, solve cultural quests, and collect personalized keepsake badges.",
+      nightTitle: "Nighttime:",
+      nightDesc:
+        "Unlocks a whimsical narrative layer (the Veil) via AR camera, decoding forgotten messages and awakening Memory Scenes in safe pedestrian areas.",
+      audienceTitle: "Target Audience:",
+      audienceDesc:
+        "Independent travelers, local youth groups in HCMC, cultural heritage enthusiasts, and destination promotion boards.",
+    },
+    problem: {
+      title: "2. Problem & Research Hypothesis",
+      realityTitle: "Observed Reality",
+      realityDesc:
+        "Urban tourism often boils down to rapid photo check-ins lasting just minutes before departing. Travelers lack incentives and engaging mediums to deeply connect with the historical context and living stories of landmarks.",
+      hypothesisTitle: "Veilwake's Hypothesis",
+      hypothesisDesc:
+        "By gamifying cultural appreciation into fieldwork observation riddles with personalized digital keepsakes as rewards, travelers willingly spend more dwell time and foster genuine reverence for heritage.",
+    },
+    loop: {
+      title: "3. Experience Loop",
+      step1: "STEP 1",
+      step1Desc: "GPS Map Suggests Landmarks",
+      step2: "STEP 2",
+      step2Desc: "Observe & Solve Riddles",
+      step3: "STEP 3",
+      step3Desc: "Claim Badge & Memory Fragment",
+      step4: "STEP 4",
+      step4Desc: "Evening AR Seal Discovery",
+      step5: "STEP 5",
+      step5Desc: "Save Memory Scene to Passport",
+      note: "* A closed-loop flow naturally inspiring visitors to explore both during daylight hours and post-dusk.",
+    },
+    tourismValue: {
+      title: "4. Three Tourism Value Pillars for HCMC",
+      p1Title: "1. Creative Cultural Tourism Development",
+      p1Desc:
+        "Enables heritage structures (e.g. Saigon Central Post Office, Notre-Dame Cathedral) to communicate with younger generations via modern, vibrant storytelling rather than rigid plaques.",
+      p2Title: "2. Promoting Safe Evening Economy & Night Tourism",
+      p2Desc:
+        "Provides travelers a meaningful purpose to revisit landmarks at night through AR narrative quests, increasing dwell time and foot traffic to neighboring pedestrian strips.",
+      p3Title: "3. Accelerating Tourism Digital Transformation",
+      p3Desc:
+        "Leverages GPS mapping, markerless AR, and digital souvenir passports without requiring costly physical hardware installations that might harm historic facades.",
+    },
+    differentiation: {
+      title: "5. Differentiation & Brand Identity System",
+      diff1Title: "Neither a pure game nor a dry audio guide:",
+      diff1Desc:
+        "Veilwake sits right at the intersection of independent travel and light urban adventure.",
+      diff2Title: "Absolute respect for physical heritage:",
+      diff2Desc:
+        "Every quest requires looking up at real architecture rather than staring blindly at a screen.",
+      diff3Title: "Personalized postcard keepsakes:",
+      diff3Desc:
+        "Rather than static stock images, players embed photos they took themselves into authentic commemorative frames.",
+      brandSystemBadge: "Brand Identity System",
+      brandSystemTitle: "Emblem Concept & Mascot Kiri",
+      designSystemTag: "Design System SVW-2026",
+      elementsHeading: "5 Elements Composing the Ký Môn Arch Emblem:",
+      el1Title: "Sun:",
+      el1Desc: "The waking world · Daylight · Active living heritage discovery.",
+      el2Title: "Moon:",
+      el2Desc: "The Veil realm · Evening · Awakening untold stories.",
+      el3Title: "Vaulted Arch:",
+      el3Desc: "Bridging both worlds, evoking Saigon's colonial archways.",
+      el4Title: "Flowing Stream:",
+      el4Desc: "The journey of exploration, echoing the Saigon River.",
+      el5Title: "Starlight:",
+      el5Desc: "The nexus of memories, hope, and wonders waiting to be told.",
+      mascotBadge: "Companion Mascot",
+      mascotName: "NPC Kiri",
+      mascotDesc:
+        "A friendly little bird guiding travelers through cultural quests, cultivating a warm, engaging atmosphere for all ages.",
+      appIconBadge: "Mobile App Icon",
+      appIconName: "Saigon: Veilwake App",
+      appIconDesc:
+        "Modern squircle icon featuring the Ký Môn archway with a refined Day/Night gradient transition.",
+    },
+    mvpScope: {
+      title: "6. MVP Scope & Field Test Limits",
+      canonTitle: "Chapter Zero — The Lost Letter:",
+      canonDescPart1: "The MVP focuses thoroughly on 2 iconic Saigon landmarks:",
+      canonDescDay: "Saigon Central Post Office",
+      canonDescPart2: "(daylight) and",
+      canonDescNight: "Public grounds outside Notre-Dame Cathedral",
+      canonDescPart3: "(evening).",
+      stop1Caption: "Stop 1: Central Post Office (Daylight)",
+      stop2Caption: "Stop 2: Outside Notre-Dame (Evening)",
+      safetyTitle: "Technical & Field Safety Boundaries:",
+      safetyDesc:
+        "Requires ARCore-compatible Android device; AR activation is strictly limited to safe public pedestrian zones; never superimposed on religious ceremony spaces.",
+    },
+    roadmap: {
+      title: "7. Scalability Roadmap",
+      phase1Tag: "Phase 1",
+      phase1Title: "Refining Chapter Zero",
+      phase1Desc: "Conducting physical user experience surveys and calibrating cultural riddles.",
+      phase2Tag: "Phase 2",
+      phase2Title: "Expanding Heritage Grid",
+      phase2Desc: "Cholon cultural culinary trail (District 5), Fine Arts Museum, and craft villages.",
+      phase3Tag: "Phase 3",
+      phase3Title: "Regional Extension (Vung Tau)",
+      phase3Desc: "Coastal discovery route connecting maritime lighthouses and seaside heritage.",
+    },
+    team: {
+      title: "8. Implementation Team & Contact",
+      teamName: "Saigon: Veilwake Project Team",
+      competition: "Participant in HIST 2026 Tourism Entrepreneurship & Innovation Competition",
+      trackLabel: "Competition Track:",
+      trackValue: "Smart Tourism & Cultural Innovation",
+      statusLabel: "Project Status:",
+      statusValue: "Prototype & Field Validation Phase",
+    },
+  },
+};
+

@@ -90,6 +90,8 @@ export const translations = {
       pillar3Title: "Chuyển đổi số",
       pillar3Desc: "Tích hợp bản đồ GPS, gamification & AR.",
       projectLink: "Tìm hiểu chi tiết dự án tại hồ sơ HIST 2026",
+      postcardTag1: "Ký ức thực địa",
+      postcardTag2: "Dấu ấn di sản",
     },
     discover: {
       badge: "03 · CƠ CHẾ KHÁM PHÁ THỰC ĐỊA",
@@ -296,9 +298,9 @@ export const translations = {
       badgeTitle: "Huy hiệu Bưu điện",
       unlockedSample: "Đã mở khóa (Mẫu)",
       lockedSample: "Chưa mở",
-      npcCompanion: "Bạn Đồng Hành Ký Giới",
+      npcCompanion: "Kiri — Bạn Đồng Hành Ký Giới",
       npcDialogue:
-        "“Chào bạn! Mình là bạn đồng hành. Mỗi khi đến gần một địa danh có câu chuyện chưa kể, cánh Điệp Ức sẽ khẽ rung lên đấy!”",
+        "“Chào bạn! Mình là Kiri, bạn đồng hành Ký Giới của bạn. Mỗi khi đến gần một địa danh có câu chuyện chưa kể, cánh Điệp Ức sẽ khẽ rung lên đấy!”",
       npcNote: "* Thoại kịch bản hướng dẫn, không phải AI chatbot tự do.",
       arLensHeader: "ỐNG KÍNH KÝ GIỚI",
       arScanning: "Đang quét không gian thực địa...",
@@ -310,7 +312,7 @@ export const translations = {
       menuJourney: "2. Hành trình",
       menuJournal: "3. Nhật ký",
       menuPassport: "4. Hộ chiếu",
-      ctrlNPC: "NPC",
+      ctrlNPC: "Kiri",
       ctrlKyMon: "Ký Môn",
       ctrlAR: "Ống kính AR",
       footerNote:
@@ -417,6 +419,8 @@ export const translations = {
       pillar3Title: "Digital Shift",
       pillar3Desc: "Seamlessly combining GPS mapping, gamification & non-invasive AR.",
       projectLink: "Explore the comprehensive HIST 2026 project dossier",
+      postcardTag1: "Field Memories",
+      postcardTag2: "Heritage Imprints",
     },
     discover: {
       badge: "03 · PHYSICAL EXPLORATION MECHANISM",
@@ -623,9 +627,9 @@ export const translations = {
       badgeTitle: "Post Office Badge",
       unlockedSample: "Unlocked (Sample)",
       lockedSample: "Locked",
-      npcCompanion: "Veil Companion",
+      npcCompanion: "Kiri — Veil Companion",
       npcDialogue:
-        "“Greetings traveler! Whenever you approach a landmark with an untold story, the butterfly wings will gently flutter!”",
+        "“Greetings traveler! I am Kiri, your Veil Companion. Whenever you approach a landmark with an untold story, the butterfly wings will gently flutter!”",
       npcNote: "* Scripted guided dialogue; not an unconstrained AI bot.",
       arLensHeader: "VEIL AR LENS",
       arScanning: "Scanning physical environment...",
@@ -637,7 +641,7 @@ export const translations = {
       menuJourney: "2. Journey",
       menuJournal: "3. Journal",
       menuPassport: "4. Passport",
-      ctrlNPC: "NPC",
+      ctrlNPC: "Kiri",
       ctrlKyMon: "Ký Môn",
       ctrlAR: "AR Lens",
       footerNote:

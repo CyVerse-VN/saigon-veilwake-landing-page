@@ -71,7 +71,7 @@ export default function BadgePersonalizer() {
                 <div className="relative w-full h-32 rounded-lg overflow-hidden mb-1">
                   <Image
                     src="/assets/badge_default_v1.webp"
-                    alt="Huy hiệu mặc định Bưu Điện"
+                    alt={t.badgePersonalizer.defaultBadgeTitle}
                     fill
                     className="object-contain"
                   />
@@ -91,7 +91,7 @@ export default function BadgePersonalizer() {
                 {/* User photo inside the souvenir frame */}
                 <Image
                   src="/assets/badge_user_v1.webp"
-                  alt="Huy hiệu đã cá nhân hóa"
+                  alt={t.badgePersonalizer.title}
                   fill
                   className="object-cover object-center"
                 />

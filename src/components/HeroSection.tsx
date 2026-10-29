@@ -119,8 +119,8 @@ export default function HeroSection({ onOpenDemo }: { onOpenDemo?: () => void })
                   }
                   alt={
                     isTwilight
-                      ? "Bưu điện Trung tâm Sài Gòn lúc hoàng hôn lung linh"
-                      : "Bưu điện Trung tâm Sài Gòn ban ngày & Du khách"
+                      ? t.hero.btnTwilight
+                      : t.hero.btnDay
                   }
                   fill
                   priority
