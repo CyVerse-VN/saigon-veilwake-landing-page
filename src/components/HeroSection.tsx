@@ -20,22 +20,22 @@ export default function HeroSection({ onOpenDemo }: { onOpenDemo?: () => void })
 
   return (
     <section className="relative pt-6 pb-12 sm:pt-10 sm:pb-16 overflow-hidden">
-      {/* Background ambient gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-sky-50/80 via-page to-white -z-10 pointer-events-none" />
+      {/* Subtle ambient light orb */}
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[360px] bg-sky-200/25 rounded-full blur-3xl -z-10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
         {/* Two-Column Grid: Left Narrative (7/12) + Right Showcase Rail (5/12) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* LEFT COLUMN: HERO NARRATIVE (ACT 01) */}
           <div className="lg:col-span-7 space-y-6">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100/90 text-ocean-blue text-xs font-bold tracking-wider uppercase border border-sky-200">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-100/90 text-ocean-blue text-xs font-bold tracking-wider uppercase border border-sky-200 shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-ocean-blue" />
               <span>{t.hero.eyebrow}</span>
             </div>
 
             {/* H1 Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-extrabold font-display text-deep-blue leading-[1.15] tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold font-display text-deep-blue leading-[1.15] tracking-tight">
               {t.hero.title}
             </h1>
 
@@ -63,7 +63,7 @@ export default function HeroSection({ onOpenDemo }: { onOpenDemo?: () => void })
                         el?.scrollIntoView({ behavior: "smooth" });
                       }
                 }
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-sky-border bg-white text-deep-blue hover:bg-sky-50 transition-all font-semibold text-sm sm:text-base shadow-sm"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-white/60 dark:border-white/20 bg-white/75 dark:bg-slate-800/80 backdrop-blur-md text-deep-blue dark:text-white hover:bg-white dark:hover:bg-slate-700 transition-all font-semibold text-sm sm:text-base shadow-sm"
               >
                 <PlayCircle className="w-4 h-4 text-ocean-blue" />
                 <span>{t.hero.ctaSecondary}</span>
@@ -72,45 +72,45 @@ export default function HeroSection({ onOpenDemo }: { onOpenDemo?: () => void })
 
             {/* 3 Microproof Tags */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-6 pt-2 text-xs font-semibold text-body-blue">
-              <span className="flex items-center gap-1.5 bg-white/80 px-3 py-1.5 rounded-full border border-sky-border/80 shadow-xs">
+              <span className="flex items-center gap-1.5 bg-white/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/80 shadow-xs">
                 <MapPin className="w-3.5 h-3.5 text-teal" /> {t.hero.tagRealPlace}
               </span>
-              <span className="flex items-center gap-1.5 bg-white/80 px-3 py-1.5 rounded-full border border-sky-border/80 shadow-xs">
+              <span className="flex items-center gap-1.5 bg-white/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/80 shadow-xs">
                 <Landmark className="w-3.5 h-3.5 text-sun-gold" /> {t.hero.tagCulture}
               </span>
-              <span className="flex items-center gap-1.5 bg-white/80 px-3 py-1.5 rounded-full border border-sky-border/80 shadow-xs">
+              <span className="flex items-center gap-1.5 bg-white/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/80 shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-veil-lilac" /> {t.hero.tagAR}
               </span>
             </div>
 
-            {/* HERO VISUAL BOX (Daylight is default, with Day-to-Night INT-01 toggle) */}
-            <div className="relative rounded-3xl overflow-hidden border border-sky-border shadow-floating bg-white group mt-6">
+            {/* HERO VISUAL PORT (Seamless Cinematic Window) */}
+            <div className="relative rounded-3xl sm:rounded-[32px] overflow-hidden group mt-6 shadow-2xl shadow-sky-950/10 transition-all duration-500">
               {/* Day-to-Night Toggle Pill (INT-01) */}
-              <div className="absolute top-4 right-4 z-20 flex items-center bg-white/90 backdrop-blur-md rounded-full p-1 border border-sky-border shadow-md">
+              <div className="absolute top-4 right-4 z-20 flex items-center bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-full p-1 border border-white/40 dark:border-white/10 shadow-sm">
                 <button
                   onClick={() => setIsTwilight(false)}
-                  className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold transition-all ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
                     !isTwilight
-                      ? "bg-amber-100 text-amber-900 shadow-xs"
+                      ? "bg-white text-deep-blue shadow-xs"
                       : "text-body-blue hover:text-deep-blue"
                   }`}
                 >
-                  <Sun className="w-3 h-3 text-sun-gold" /> {t.hero.btnDay}
+                  <Sun className="w-3.5 h-3.5 text-sun-gold" /> {t.hero.btnDay}
                 </button>
                 <button
                   onClick={() => setIsTwilight(true)}
-                  className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold transition-all ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
                     isTwilight
                       ? "bg-indigo-900 text-indigo-100 shadow-xs"
                       : "text-body-blue hover:text-deep-blue"
                   }`}
                 >
-                  <Moon className="w-3 h-3 text-veil-lilac" /> {t.hero.btnTwilight}
+                  <Moon className="w-3.5 h-3.5 text-veil-lilac" /> {t.hero.btnTwilight}
                 </button>
               </div>
 
               {/* Main Visual Image (Real Photo Transition) */}
-              <div className="relative h-[340px] sm:h-[420px] w-full overflow-hidden transition-all duration-700">
+              <div className="relative h-[380px] sm:h-[460px] lg:h-[500px] w-full overflow-hidden transition-all duration-700">
                 <Image
                   src={
                     isTwilight
@@ -130,7 +130,7 @@ export default function HeroSection({ onOpenDemo }: { onOpenDemo?: () => void })
                 {/* Twilight / Veil Layer (INT-01) */}
                 {isTwilight && (
                   <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/70 via-indigo-900/30 to-transparent pointer-events-none animate-in fade-in duration-500">
-                    <div className="absolute bottom-4 left-4 right-4 p-3 rounded-2xl bg-white/95 backdrop-blur-md text-deep-blue shadow-lg border border-veil-lilac/40">
+                    <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md text-deep-blue shadow-lg border border-veil-lilac/40">
                       <span className="text-[10px] font-bold text-veil-lilac uppercase tracking-wider block">
                         {t.hero.dayToNightBadge}
                       </span>
@@ -141,10 +141,10 @@ export default function HeroSection({ onOpenDemo }: { onOpenDemo?: () => void })
                   </div>
                 )}
 
-                {/* Handwritten Note Annotation with Protective Glass Backing */}
-                <div className="absolute top-4 left-4 z-10 max-w-[240px] pointer-events-none">
-                  <span className="inline-block px-3 py-1.5 rounded-2xl bg-white/90 backdrop-blur-md shadow-xs border border-white/60">
-                    <p className="font-handwriting text-base sm:text-lg text-deep-blue rotate-[-2deg] leading-tight font-semibold">
+                {/* Handwritten Note Annotation */}
+                <div className="absolute top-4 left-4 z-10 max-w-[260px] pointer-events-none">
+                  <span className="inline-block px-3.5 py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-xs border border-white/40 dark:border-white/10">
+                    <p className="font-handwriting text-base sm:text-lg text-deep-blue dark:text-amber-200 rotate-[-1.5deg] leading-tight font-semibold">
                       {t.hero.handwrittenNote}
                     </p>
                   </span>

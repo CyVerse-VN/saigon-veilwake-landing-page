@@ -2,128 +2,227 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Sparkles, ShieldAlert, Camera, CheckCircle } from "lucide-react";
+import { ShieldAlert, Camera, CheckCircle } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function NightSection() {
   const [showDetails, setShowDetails] = useState(false);
   const { t } = useLanguage();
+  const { isNight } = useTheme();
 
   return (
-    <section className="py-12 sm:py-16 border-t border-sky-border/60 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* ISOLATED NIGHT FEATURE BANNER (ACT 05) */}
-        <div className="relative rounded-[32px] overflow-hidden bg-gradient-to-br from-[#1C2C4E] via-[#223966] to-[#3B3264] text-white p-6 sm:p-10 lg:p-12 shadow-floating border border-indigo-400/30">
-          {/* Background Ambient Glow */}
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-veil-lilac/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-ocean-blue/30 rounded-full blur-3xl pointer-events-none" />
+    <section className="py-20 sm:py-28 relative overflow-hidden w-full transition-colors duration-500">
+      {/* 
+        TWO SEPARATE ATMOSPHERIC COLOR SETS:
+        - Day Mode: Seamless luminous daylight transition with subtle dusk twilight & sun-gold orbs
+        - Night Mode: Deep midnight obsidian cosmic atmosphere with starlight violet & ocean glow
+      */}
+      {isNight ? (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#060B18]/70 via-[#060B18] to-[#060B18]/70 backdrop-blur-3xl -z-10 transition-colors duration-700" />
+          <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-veil-lilac/25 rounded-full blur-[140px] pointer-events-none" />
+          <div className="absolute -bottom-32 -left-32 w-[600px] h-[600px] bg-ocean-blue/30 rounded-full blur-[140px] pointer-events-none" />
+        </>
+      ) : (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-sky-100/40 to-transparent backdrop-blur-2xl -z-10 transition-colors duration-700" />
+          <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-sky-200/35 rounded-full blur-[140px] pointer-events-none" />
+          <div className="absolute -bottom-32 -left-32 w-[600px] h-[600px] bg-amber-200/25 rounded-full blur-[140px] pointer-events-none" />
+        </>
+      )}
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-amber-200 text-xs font-bold tracking-wider uppercase border border-white/20">
-                <Sparkles className="w-3.5 h-3.5 text-veil-lilac" />
-                <span>{t.night.badge}</span>
-              </div>
+      {/* Editorial Chapter Waypoint Bridge */}
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 mb-10 relative z-10">
+        <div className={`flex items-center gap-4 text-xs font-semibold uppercase tracking-widest ${
+          isNight ? "text-amber-300 drop-shadow-sm" : "text-ocean-blue"
+        }`}>
+          <span>{t.night.badge}</span>
+          <div className={`flex-1 h-px ${
+            isNight
+              ? "bg-gradient-to-r from-amber-300/40 via-indigo-400/30 to-transparent"
+              : "bg-gradient-to-r from-ocean-blue/40 via-sky-300/50 to-transparent"
+          }`} />
+          <span className={`text-[10px] font-mono font-medium ${
+            isNight ? "text-slate-300" : "text-body-blue/80"
+          }`}>
+            SAU 18:00 · KÝ GIỚI THỨC TỈNH
+          </span>
+        </div>
+      </div>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display leading-tight text-white">
-                {t.night.title}
-              </h2>
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+          {/* Left Narrative Column */}
+          <div className="lg:col-span-7 space-y-6">
+            <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight tracking-tight ${
+              isNight ? "text-white drop-shadow-sm" : "text-deep-blue"
+            }`}>
+              {t.night.title}
+            </h2>
 
-              <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-xl">
-                {t.night.description}
-              </p>
+            <p className={`text-base sm:text-lg leading-relaxed max-w-xl ${
+              isNight ? "text-slate-200/90" : "text-body-blue/90"
+            }`}>
+              {t.night.description}
+            </p>
 
-              {/* 4 Conditions */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-[11px]">
-                <div className="p-2.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/15">
-                  <span className="text-amber-300 font-bold block">{t.night.cond1Title}</span>
-                  <span className="text-slate-300 text-[10px]">{t.night.cond1Desc}</span>
-                </div>
-                <div className="p-2.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/15">
-                  <span className="text-amber-300 font-bold block">{t.night.cond2Title}</span>
-                  <span className="text-slate-300 text-[10px]">{t.night.cond2Desc}</span>
-                </div>
-                <div className="p-2.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/15">
-                  <span className="text-amber-300 font-bold block">{t.night.cond3Title}</span>
-                  <span className="text-slate-300 text-[10px]">{t.night.cond3Desc}</span>
-                </div>
-                <div className="p-2.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/15">
-                  <span className="text-amber-300 font-bold block">{t.night.cond4Title}</span>
-                  <span className="text-slate-300 text-[10px]">{t.night.cond4Desc}</span>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                <button
-                  onClick={() => setShowDetails(!showDetails)}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream text-deep-blue hover:bg-white font-bold text-xs sm:text-sm shadow-md transition-all"
+            {/* 4 Conditions (Frameless Open Columns with 2 Distinct Color Sets) */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
+              {[
+                { title: t.night.cond1Title, desc: t.night.cond1Desc },
+                { title: t.night.cond2Title, desc: t.night.cond2Desc },
+                { title: t.night.cond3Title, desc: t.night.cond3Desc },
+                { title: t.night.cond4Title, desc: t.night.cond4Desc },
+              ].map((cond, idx) => (
+                <div
+                  key={idx}
+                  className={`p-3.5 rounded-2xl transition-all space-y-1 ${
+                    isNight
+                      ? "bg-white/5 border border-white/10 hover:bg-white/10"
+                      : "bg-white/80 border border-sky-200/70 shadow-xs hover:bg-white hover:border-ocean-blue/40 hover:shadow-sm"
+                  }`}
                 >
-                  <Camera className="w-4 h-4 text-ocean-blue" />
-                  <span>{showDetails ? t.night.btnHide : t.night.btnShow}</span>
-                </button>
-
-                <span className="text-[11px] text-slate-300 flex items-center gap-1.5">
-                  <CheckCircle className="w-3.5 h-3.5 text-teal" /> {t.night.labelPrototype}
-                </span>
-              </div>
-
-              {/* Safety Copy (Mandatory by Spec) */}
-              <div className="flex items-start gap-2.5 p-3 rounded-2xl bg-white/5 border border-white/10 text-xs text-slate-300 max-w-xl">
-                <ShieldAlert className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
-                <p className="leading-snug">
-                  <strong>{t.night.safetyWarningTitle}</strong> {t.night.safetyWarningText}
-                </p>
-              </div>
+                  <span className={`font-bold block text-xs ${
+                    isNight ? "text-amber-300" : "text-amber-800"
+                  }`}>
+                    {cond.title}
+                  </span>
+                  <span className={`text-[11px] leading-snug block ${
+                    isNight ? "text-slate-300" : "text-slate-600 font-medium"
+                  }`}>
+                    {cond.desc}
+                  </span>
+                </div>
+              ))}
             </div>
 
-            {/* Right Visual Box (Night AR Screen) */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-floating group">
-                <div className="relative h-72 sm:h-96 w-full">
-                  <Image
-                    src="/assets/act05_notre_dame_night.webp"
-                    alt="Notre-Dame Cathedral Night Scene"
-                    fill
-                    className="object-cover object-center"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/80 via-transparent to-transparent flex items-end p-4">
-                  <div className="text-left">
-                    <span className="text-[10px] px-2 py-0.5 rounded bg-veil-lilac/40 text-white font-bold border border-veil-lilac/50 uppercase">
-                      {t.night.sealAwakened}
-                    </span>
-                    <h4 className="text-sm font-bold text-white mt-1">
-                      {t.night.notreDameTime}
-                    </h4>
-                    <p className="text-[11px] text-slate-300 mt-0.5">
-                      {t.night.notreDameDesc}
-                    </p>
-                  </div>
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <button
+                onClick={() => setShowDetails(!showDetails)}
+                className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all ${
+                  isNight
+                    ? "bg-cream text-slate-900 hover:bg-white hover:text-slate-950 shadow-amber-950/20"
+                    : "bg-ocean-blue text-white hover:bg-deep-blue shadow-sky-950/15"
+                }`}
+              >
+                <Camera className={`w-4 h-4 ${isNight ? "text-ocean-blue" : "text-sky-200"}`} />
+                <span>{showDetails ? t.night.btnHide : t.night.btnShow}</span>
+              </button>
+
+              <span className={`text-xs flex items-center gap-1.5 px-3.5 py-2 rounded-full font-semibold border ${
+                isNight
+                  ? "bg-white/10 text-slate-200 border-white/10"
+                  : "bg-white/80 text-body-blue border-sky-200/80 shadow-xs"
+              }`}>
+                <CheckCircle className="w-3.5 h-3.5 text-teal" /> {t.night.labelPrototype}
+              </span>
+            </div>
+
+            {/* Safety Copy (Mandatory by Spec - 2 High-Contrast Palettes) */}
+            <div className={`flex items-start gap-3 p-4 rounded-2xl text-xs max-w-xl transition-all ${
+              isNight
+                ? "bg-amber-950/40 border border-amber-500/30 text-slate-200 backdrop-blur-md"
+                : "bg-amber-50/90 border border-amber-300/80 text-amber-950 shadow-xs backdrop-blur-sm"
+            }`}>
+              <ShieldAlert className={`w-5 h-5 shrink-0 mt-0.5 ${
+                isNight ? "text-amber-300" : "text-amber-700"
+              }`} />
+              <p className="leading-relaxed">
+                <strong className={`font-bold ${
+                  isNight ? "text-amber-200" : "text-amber-900"
+                }`}>
+                  {t.night.safetyWarningTitle}
+                </strong>{" "}
+                <span className={isNight ? "text-slate-300" : "text-amber-900/90"}>
+                  {t.night.safetyWarningText}
+                </span>
+              </p>
+            </div>
+          </div>
+
+          {/* Right Visual Box (Night AR Screen - Frameless Cinematic Window) */}
+          <div className="lg:col-span-5 relative">
+            <div className={`relative rounded-3xl sm:rounded-[32px] overflow-hidden group transition-all duration-500 ${
+              isNight
+                ? "shadow-2xl shadow-indigo-950/80 border border-white/10"
+                : "shadow-2xl shadow-sky-950/15 border border-sky-200/60"
+            }`}>
+              <div className="relative h-80 sm:h-[440px] w-full">
+                <Image
+                  src="/assets/act05_notre_dame_night.webp"
+                  alt="Notre-Dame Cathedral Night Scene"
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#060B18]/95 via-[#060B18]/40 to-transparent flex items-end p-6 sm:p-8">
+                <div className="text-left space-y-1.5">
+                  <span className="text-[10px] px-3 py-1 rounded-full bg-veil-lilac/70 text-white font-bold uppercase tracking-wider inline-block backdrop-blur-sm shadow-xs">
+                    {t.night.sealAwakened}
+                  </span>
+                  <h4 className="text-lg font-bold text-white font-display drop-shadow-sm">
+                    {t.night.notreDameTime}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
+                    {t.night.notreDameDesc}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Expandable details if opened */}
-          {showDetails && (
-            <div className="mt-8 pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-200 animate-in fade-in duration-300">
-              <div className="p-3 rounded-xl bg-white/10">
-                <h5 className="font-bold text-amber-200 mb-1">{t.night.detailNightPillar}</h5>
-                <p>{t.night.detailNightPillarDesc}</p>
-              </div>
-              <div className="p-3 rounded-xl bg-white/10">
-                <h5 className="font-bold text-amber-200 mb-1">{t.night.detailArPillar}</h5>
-                <p>{t.night.detailArPillarDesc}</p>
-              </div>
-              <div className="p-3 rounded-xl bg-white/10">
-                <h5 className="font-bold text-amber-200 mb-1">{t.night.detailHeritagePillar}</h5>
-                <p>{t.night.detailHeritagePillarDesc}</p>
-              </div>
-            </div>
-          )}
         </div>
+
+        {/* Expandable details if opened */}
+        {showDetails && (
+          <div className={`mt-12 pt-8 border-t grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs animate-in fade-in duration-300 ${
+            isNight ? "border-white/10 text-slate-200" : "border-sky-200/80 text-body-blue"
+          }`}>
+            <div className={`p-5 rounded-2xl space-y-1.5 transition-all ${
+              isNight ? "bg-white/5 border border-white/10 backdrop-blur-md" : "bg-white/85 border border-sky-200/70 shadow-sm backdrop-blur-sm"
+            }`}>
+              <h5 className={`font-bold text-sm font-display ${
+                isNight ? "text-amber-200" : "text-deep-blue"
+              }`}>
+                {t.night.detailNightPillar}
+              </h5>
+              <p className={`leading-relaxed ${
+                isNight ? "text-slate-300" : "text-slate-600"
+              }`}>
+                {t.night.detailNightPillarDesc}
+              </p>
+            </div>
+            <div className={`p-5 rounded-2xl space-y-1.5 transition-all ${
+              isNight ? "bg-white/5 border border-white/10 backdrop-blur-md" : "bg-white/85 border border-sky-200/70 shadow-sm backdrop-blur-sm"
+            }`}>
+              <h5 className={`font-bold text-sm font-display ${
+                isNight ? "text-amber-200" : "text-deep-blue"
+              }`}>
+                {t.night.detailArPillar}
+              </h5>
+              <p className={`leading-relaxed ${
+                isNight ? "text-slate-300" : "text-slate-600"
+              }`}>
+                {t.night.detailArPillarDesc}
+              </p>
+            </div>
+            <div className={`p-5 rounded-2xl space-y-1.5 transition-all ${
+              isNight ? "bg-white/5 border border-white/10 backdrop-blur-md" : "bg-white/85 border border-sky-200/70 shadow-sm backdrop-blur-sm"
+            }`}>
+              <h5 className={`font-bold text-sm font-display ${
+                isNight ? "text-amber-200" : "text-deep-blue"
+              }`}>
+                {t.night.detailHeritagePillar}
+              </h5>
+              <p className={`leading-relaxed ${
+                isNight ? "text-slate-300" : "text-slate-600"
+              }`}>
+                {t.night.detailHeritagePillarDesc}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

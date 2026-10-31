@@ -43,25 +43,27 @@ export default function TravelMoodsGallery() {
     t.moods.items.find((m) => m.id === selectedMood) || t.moods.items[0];
 
   return (
-    <div className="postcard-card p-5 sm:p-6 bg-white border border-sky-border rounded-3xl">
-      {/* Header */}
-      <div className="flex items-start justify-between mb-4">
+    <div className="space-y-6">
+      {/* Editorial Rail Header */}
+      <div className="flex items-start justify-between">
         <div>
-          <span className="text-[11px] font-bold uppercase tracking-wider text-ocean-blue">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-ocean-blue block">
             {t.moods.headerBadge}
           </span>
-          <h3 className="text-lg font-bold text-deep-blue mt-0.5">
+          <h3 className="text-xl sm:text-2xl font-bold font-display text-deep-blue mt-1">
             {t.moods.title}
           </h3>
-          <p className="text-xs text-body-blue mt-1">{t.moods.subtitle}</p>
+          <p className="text-xs sm:text-sm text-body-blue mt-1.5 max-w-sm leading-relaxed">
+            {t.moods.subtitle}
+          </p>
         </div>
-        <span className="text-xs px-2 py-0.5 rounded-full bg-sky-100 text-ocean-blue font-semibold flex items-center gap-1">
-          <Sparkles className="w-3 h-3" /> {t.moods.intBadge}
+        <span className="text-xs px-2.5 py-1 rounded-full bg-sky-100/80 text-ocean-blue font-semibold flex items-center gap-1 shrink-0 border border-sky-200/50">
+          <Sparkles className="w-3 h-3 text-ocean-blue" /> {t.moods.intBadge}
         </span>
       </div>
 
-      {/* 4 Mood buttons */}
-      <div className="space-y-2.5">
+      {/* 4 Mood buttons (Frameless Editorial Row Items) */}
+      <div className="space-y-2">
         {t.moods.items.map((mood) => {
           const meta = moodMeta[mood.id] || moodMeta.daylight;
           const Icon = meta.icon;
@@ -70,37 +72,37 @@ export default function TravelMoodsGallery() {
             <button
               key={mood.id}
               onClick={() => setSelectedMood(mood.id)}
-              className={`w-full text-left p-3 rounded-2xl border transition-all flex items-center justify-between group ${
+              className={`w-full text-left p-3.5 rounded-2xl transition-all duration-300 flex items-center justify-between group ${
                 isSelected
-                  ? `${meta.bgClass} ${meta.borderClass} shadow-sm ring-1 ring-ocean-blue/30`
-                  : "bg-white/80 border-sky-border/80 hover:bg-sky-50/50"
+                  ? "bg-white/95 dark:bg-slate-800/90 shadow-lg shadow-sky-950/5 ring-1 ring-ocean-blue/30 scale-[1.01]"
+                  : "hover:bg-white/70 dark:hover:bg-slate-800/50 text-body-blue"
               }`}
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3.5">
                 <div
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-105 ${meta.iconBg}`}
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 ${meta.iconBg}`}
                 >
                   <Icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs sm:text-sm font-bold text-deep-blue flex items-center gap-2">
+                  <h4 className="text-xs sm:text-sm font-bold text-deep-blue group-hover:text-ocean-blue transition-colors flex items-center gap-2">
                     {mood.name}
                     {isSelected && (
-                      <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-ocean-blue text-white font-medium">
+                      <span className="text-[9px] px-2 py-0.5 rounded-full bg-ocean-blue text-white font-medium">
                         {t.moods.viewing}
                       </span>
                     )}
                   </h4>
-                  <p className="text-[11px] text-body-blue mt-0.5">
+                  <p className="text-[11px] text-body-blue/90 dark:text-slate-300 mt-0.5">
                     {mood.tagline}
                   </p>
                 </div>
               </div>
               <ChevronRight
-                className={`w-4 h-4 text-body-blue/50 transition-transform ${
+                className={`w-4 h-4 transition-transform ${
                   isSelected
-                    ? "translate-x-1 text-ocean-blue"
-                    : "group-hover:translate-x-0.5"
+                    ? "translate-x-1 text-ocean-blue font-bold"
+                    : "text-body-blue/40 group-hover:text-ocean-blue group-hover:translate-x-1"
                 }`}
               />
             </button>
@@ -108,21 +110,21 @@ export default function TravelMoodsGallery() {
         })}
       </div>
 
-      {/* Mood Detail / Concept Preview box */}
-      <div className="mt-4 pt-4 border-t border-sky-border/70 bg-sky-50/50 rounded-2xl p-3.5">
-        <div className="flex items-center justify-between text-xs mb-1.5">
-          <span className="font-bold text-deep-blue">{currentMood.name}</span>
-          <span className="text-[10px] px-2 py-0.5 rounded bg-white text-body-blue font-medium border border-sky-border">
+      {/* Mood Detail / Concept Preview (Melted naturally into the canvas) */}
+      <div className="pt-4 border-t border-sky-200/50 dark:border-white/10 space-y-2">
+        <div className="flex items-center justify-between text-xs">
+          <span className="font-bold text-deep-blue text-sm">{currentMood.name}</span>
+          <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-sky-100/70 text-ocean-blue font-semibold border border-sky-200/40">
             {currentMood.status}
           </span>
         </div>
-        <p className="text-xs text-body-blue leading-relaxed">
+        <p className="text-xs sm:text-sm text-body-blue leading-relaxed">
           {currentMood.description}
         </p>
 
         {/* Coastal visual preview if coastal selected */}
         {selectedMood === "coastal" && (
-          <div className="mt-2.5 rounded-xl overflow-hidden border border-teal-200 shadow-xs relative h-36 w-full">
+          <div className="mt-3 rounded-2xl overflow-hidden shadow-lg relative h-40 w-full transition-all">
             <Image
               src="/assets/mood_coastal_v1.webp"
               alt="Vung Tau Coastal Scene"
@@ -133,7 +135,7 @@ export default function TravelMoodsGallery() {
         )}
       </div>
 
-      <div className="mt-2 text-[10px] text-body-blue/70 italic text-center">
+      <div className="text-[11px] text-body-blue/60 italic">
         {t.moods.note}
       </div>
     </div>

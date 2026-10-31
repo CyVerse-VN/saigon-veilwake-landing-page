@@ -9,10 +9,10 @@ export default function CtaSection({ onOpenDemo }: { onOpenDemo?: () => void }) 
   const { t } = useLanguage();
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-b from-white via-sky-50 to-page relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        {/* Postcard Frame for the final call to action */}
-        <div className="postcard-card p-8 sm:p-12 bg-white/95 backdrop-blur-sm border border-sky-border rounded-[36px] shadow-floating relative overflow-hidden">
+    <section className="py-20 sm:py-28 relative overflow-hidden w-full">
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10 text-center">
+        {/* Expansive Full-bleed Skyline Canvas (Grand Finale - Frameless) */}
+        <div className="relative rounded-3xl sm:rounded-[48px] overflow-hidden p-8 sm:p-16 lg:p-20 shadow-2xl shadow-sky-950/10 bg-gradient-to-b from-white/80 via-sky-50/50 to-white/90 dark:from-slate-900/60 dark:to-slate-950/60 backdrop-blur-2xl">
           {/* High-res Saigon skyline panorama background accent */}
           <div className="absolute inset-0 opacity-15 pointer-events-none">
             <Image
@@ -23,16 +23,16 @@ export default function CtaSection({ onOpenDemo }: { onOpenDemo?: () => void }) 
             />
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-100 text-ocean-blue text-xs font-bold tracking-wider uppercase border border-sky-200 mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-100 text-ocean-blue text-xs font-bold tracking-wider uppercase border border-sky-200/60 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-ocean-blue" />
             <span>{t.cta.badge}</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-deep-blue leading-tight max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-deep-blue leading-tight max-w-2xl mx-auto tracking-tight">
             {t.cta.title}
           </h2>
 
-          <p className="text-sm sm:text-base text-body-blue mt-4 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-body-blue/90 mt-4 max-w-xl mx-auto leading-relaxed">
             {t.cta.description}
           </p>
 
@@ -55,7 +55,7 @@ export default function CtaSection({ onOpenDemo }: { onOpenDemo?: () => void }) 
 
             <Link
               href="/project"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-ocean-blue/40 bg-sky-50 text-deep-blue hover:bg-sky-100 transition-all font-semibold text-sm sm:text-base shadow-sm"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white/85 dark:bg-slate-800/90 text-deep-blue dark:text-white hover:bg-white dark:hover:bg-slate-700 transition-all font-semibold text-sm sm:text-base shadow-sm border border-white/60 dark:border-white/10"
             >
               <span>{t.cta.btnProject}</span>
               <ArrowRight className="w-4 h-4 text-ocean-blue" />
@@ -63,13 +63,13 @@ export default function CtaSection({ onOpenDemo }: { onOpenDemo?: () => void }) 
           </div>
 
           {/* Handwritten Quote */}
-          <div className="mt-8 pt-6 border-t border-sky-100">
-            <p className="font-handwriting text-base sm:text-xl text-amber-900/80">
+          <div className="mt-10 pt-6 border-t border-sky-200/40 dark:border-white/10">
+            <p className="font-handwriting text-2xl sm:text-3xl text-amber-900 dark:text-amber-200 leading-relaxed">
               {t.cta.handwrittenQuote}
             </p>
           </div>
 
-          <p className="mt-3 text-[11px] text-body-blue/70">
+          <p className="mt-3 text-xs text-body-blue/70">
             {t.cta.note}
           </p>
         </div>

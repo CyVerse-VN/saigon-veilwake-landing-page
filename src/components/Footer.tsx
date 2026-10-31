@@ -9,7 +9,7 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="relative bg-gradient-to-b from-page to-sky-100/60 border-t border-sky-border pt-16 pb-12 overflow-hidden">
+    <footer className="relative pt-16 pb-12 overflow-hidden">
       {/* Decorative floral accents cropped from reference */}
       <div className="absolute bottom-0 left-0 w-36 sm:w-48 opacity-60 pointer-events-none select-none">
         <Image
@@ -30,7 +30,7 @@ export default function Footer() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Logo & Tagline */}
           <div className="flex flex-col items-center gap-2">
@@ -75,19 +75,19 @@ export default function Footer() {
 
           {/* Social / Channels */}
           <div className="flex items-center gap-4 text-body-blue pt-1">
-            <span className="w-9 h-9 rounded-full bg-white border border-sky-border flex items-center justify-center hover:text-ocean-blue hover:border-ocean-blue transition-all cursor-pointer shadow-sm">
+            <span className="w-9 h-9 rounded-full bg-white/75 dark:bg-slate-900/75 backdrop-blur-md flex items-center justify-center hover:bg-white text-body-blue hover:text-ocean-blue transition-all cursor-pointer shadow-xs">
               <Youtube className="w-4 h-4" />
             </span>
-            <span className="w-9 h-9 rounded-full bg-white border border-sky-border flex items-center justify-center hover:text-ocean-blue hover:border-ocean-blue transition-all cursor-pointer shadow-sm">
+            <span className="w-9 h-9 rounded-full bg-white/75 dark:bg-slate-900/75 backdrop-blur-md flex items-center justify-center hover:text-ocean-blue transition-all cursor-pointer shadow-xs">
               <Instagram className="w-4 h-4" />
             </span>
-            <span className="w-9 h-9 rounded-full bg-white border border-sky-border flex items-center justify-center hover:text-ocean-blue hover:border-ocean-blue transition-all cursor-pointer shadow-sm">
+            <span className="w-9 h-9 rounded-full bg-white/75 dark:bg-slate-900/75 backdrop-blur-md flex items-center justify-center hover:text-ocean-blue transition-all cursor-pointer shadow-xs">
               <MapPin className="w-4 h-4" />
             </span>
           </div>
 
           {/* Divider & Copyright */}
-          <div className="w-full max-w-2xl border-t border-sky-border/80 pt-6 mt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-body-blue/80 gap-2">
+          <div className="w-full max-w-2xl border-t border-sky-200/40 dark:border-white/10 pt-6 mt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-body-blue/80 gap-2">
             <span>{t.footer.copyright}</span>
             <div className="flex items-center gap-3">
               <span className="px-2 py-0.5 rounded bg-sky-200/50 text-deep-blue font-semibold">HIST 2026</span>

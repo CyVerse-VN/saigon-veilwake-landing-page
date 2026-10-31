@@ -27,34 +27,34 @@ export default function InteractiveAppPreview() {
   const { t } = useLanguage();
 
   return (
-    <div className="postcard-card p-5 sm:p-6 bg-white border border-sky-border rounded-3xl">
+    <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-start justify-between">
         <div>
-          <span className="text-[11px] font-bold uppercase tracking-wider text-ocean-blue">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-ocean-blue block">
             {t.appPreview.badge}
           </span>
-          <h3 className="text-base sm:text-lg font-bold text-deep-blue">
+          <h3 className="text-xl sm:text-2xl font-bold font-display text-deep-blue mt-0.5">
             {t.appPreview.title}
           </h3>
-          <p className="text-xs text-body-blue">
+          <p className="text-xs sm:text-sm text-body-blue mt-1">
             {t.appPreview.subtitle}
           </p>
         </div>
-        <span className="text-[10px] px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200 font-bold">
+        <span className="text-xs px-2.5 py-1 rounded-full bg-teal-50 text-teal-700 border border-teal-200/60 font-bold shrink-0">
           {t.appPreview.specTag}
         </span>
       </div>
 
-      {/* Smartphone Chassis Mockup */}
-      <div className="relative mx-auto max-w-[320px] rounded-[36px] p-3 bg-gradient-to-b from-slate-800 to-slate-900 shadow-floating border-4 border-slate-700">
+      {/* Smartphone Chassis Mockup (Frameless Canvas Floating) */}
+      <div className="relative mx-auto max-w-[320px] rounded-[44px] p-3 bg-gradient-to-b from-slate-800 to-slate-950 shadow-2xl shadow-sky-950/20 border-4 border-slate-700/80">
         {/* Dynamic Island / Speaker notch */}
         <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-4 bg-black rounded-full z-30 flex items-center justify-center">
           <div className="w-2.5 h-2.5 rounded-full bg-slate-900 ml-auto mr-2" />
         </div>
 
         {/* Phone Screen Container */}
-        <div className="relative w-full h-[540px] bg-sky-50 rounded-[28px] overflow-hidden flex flex-col justify-between border border-white/20 select-none">
+        <div className="postcard-paper relative w-full h-[540px] bg-sky-50 rounded-[28px] overflow-hidden flex flex-col justify-between border border-white/20 select-none">
           {/* Top Status Bar */}
           <div className="pt-3 px-5 flex items-center justify-between text-[11px] font-semibold text-deep-blue z-20">
             <span>09:41</span>

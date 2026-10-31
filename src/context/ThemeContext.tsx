@@ -32,9 +32,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (typeof document !== "undefined") {
       const root = document.documentElement;
       if (newTheme === "night") {
-        root.classList.add("night-mode");
+        root.classList.add("night-mode", "dark");
       } else {
-        root.classList.remove("night-mode");
+        root.classList.remove("night-mode", "dark");
       }
     }
   };

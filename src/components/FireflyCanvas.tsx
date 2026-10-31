@@ -245,7 +245,7 @@ export default function FireflyCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-30 select-none"
+      className="fixed inset-0 pointer-events-none z-20 select-none"
       style={{ width: "100vw", height: "100vh" }}
       aria-hidden="true"
     />
