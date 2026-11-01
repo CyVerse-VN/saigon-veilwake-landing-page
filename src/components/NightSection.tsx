@@ -97,6 +97,27 @@ export default function NightSection() {
               ))}
             </div>
 
+            {/* Field Safety Advisory (Matching Framer) */}
+            <div className={`p-4 sm:p-5 rounded-2xl border transition-all ${
+              isNight
+                ? "bg-[#111d2c] border-sky-400/40 text-slate-200"
+                : "bg-sky-50/80 border-sky-200 text-body-blue"
+            }`}>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                <span className={`text-xs font-bold uppercase tracking-wider ${
+                  isNight ? "text-sky-300" : "text-ocean-blue"
+                }`}>
+                  {t.night.safetyWarningTitle}
+                </span>
+              </div>
+              <p className={`text-xs leading-relaxed ${
+                isNight ? "text-slate-300" : "text-slate-600"
+              }`}>
+                {t.night.safetyWarningText}
+              </p>
+            </div>
+
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <button

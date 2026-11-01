@@ -45,75 +45,86 @@ export default function ValueAndShowcaseSection() {
           </p>
         </div>
 
-        {/* 3 Value Pillars Grid (Frameless Editorial Columns) */}
+        {/* 3 Value Pillars Grid (Matching Framer: Tinted Emblems & #e2f4ef Verified Badges) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Pillar 1 */}
-          <div className="rounded-3xl p-6 sm:p-8 bg-white/70 dark:bg-slate-900/40 backdrop-blur-xl shadow-xl shadow-sky-950/5 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group">
+          <div className="rounded-[24px] p-7 bg-[#F7FBFF] dark:bg-slate-900/60 border border-white/95 dark:border-white/10 shadow-lg shadow-sky-950/5 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-800 dark:text-amber-300 flex items-center justify-center mb-5 shadow-xs transition-transform group-hover:scale-110">
+              <div className="w-14 h-14 rounded-2xl bg-[#fff1d8] text-amber-800 flex items-center justify-center mb-5 shadow-xs transition-transform group-hover:scale-105">
                 <Landmark className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold font-display text-deep-blue">{t.values.pillar1Title}</h3>
-              <p className="text-xs sm:text-sm text-body-blue mt-2 leading-relaxed">
+              <h3 className="text-xl font-bold font-display text-deep-blue dark:text-white">{t.values.pillar1Title}</h3>
+              <p className="text-xs sm:text-sm text-body-blue/90 dark:text-slate-300 mt-2 leading-relaxed">
                 {t.values.pillar1Desc}
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t border-sky-200/40 dark:border-white/10 text-xs font-semibold text-teal-700 dark:text-teal-300 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-teal" /> {t.values.pillar1Check}
+            <div className="mt-6 pt-4 border-t border-sky-100 dark:border-white/10">
+              <div className="p-2.5 rounded-xl bg-[#e2f4ef] text-teal-800 dark:bg-teal-950/50 dark:text-teal-200 text-xs font-bold flex items-center gap-2 border border-teal-600/15">
+                <CheckCircle2 className="w-4 h-4 text-teal" />
+                <span>{t.values.pillar1Check}</span>
+              </div>
             </div>
           </div>
 
           {/* Pillar 2 */}
-          <div className="rounded-3xl p-6 sm:p-8 bg-white/70 dark:bg-slate-900/40 backdrop-blur-xl shadow-xl shadow-sky-950/5 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group">
+          <div className="rounded-[24px] p-7 bg-[#F7FBFF] dark:bg-slate-900/60 border border-white/95 dark:border-white/10 shadow-lg shadow-sky-950/5 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 flex items-center justify-center mb-5 shadow-xs transition-transform group-hover:scale-110">
+              <div className="w-14 h-14 rounded-2xl bg-[#eee7fb] text-purple-800 flex items-center justify-center mb-5 shadow-xs transition-transform group-hover:scale-105">
                 <Moon className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold font-display text-deep-blue">{t.values.pillar2Title}</h3>
-              <p className="text-xs sm:text-sm text-body-blue mt-2 leading-relaxed">
+              <h3 className="text-xl font-bold font-display text-deep-blue dark:text-white">{t.values.pillar2Title}</h3>
+              <p className="text-xs sm:text-sm text-body-blue/90 dark:text-slate-300 mt-2 leading-relaxed">
                 {t.values.pillar2Desc}
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t border-sky-200/40 dark:border-white/10 text-xs font-semibold text-teal-700 dark:text-teal-300 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-teal" /> {t.values.pillar2Check}
+            <div className="mt-6 pt-4 border-t border-sky-100 dark:border-white/10">
+              <div className="p-2.5 rounded-xl bg-[#e2f4ef] text-teal-800 dark:bg-teal-950/50 dark:text-teal-200 text-xs font-bold flex items-center gap-2 border border-teal-600/15">
+                <CheckCircle2 className="w-4 h-4 text-teal" />
+                <span>{t.values.pillar2Check}</span>
+              </div>
             </div>
           </div>
 
           {/* Pillar 3 */}
-          <div className="rounded-3xl p-6 sm:p-8 bg-white/70 dark:bg-slate-900/40 backdrop-blur-xl shadow-xl shadow-sky-950/5 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group">
+          <div className="rounded-[24px] p-7 bg-[#F7FBFF] dark:bg-slate-900/60 border border-white/95 dark:border-white/10 shadow-lg shadow-sky-950/5 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-teal-500/15 text-teal-700 dark:text-teal-300 flex items-center justify-center mb-5 shadow-xs transition-transform group-hover:scale-110">
+              <div className="w-14 h-14 rounded-2xl bg-[#dff4ff] text-sky-800 flex items-center justify-center mb-5 shadow-xs transition-transform group-hover:scale-105">
                 <Cpu className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold font-display text-deep-blue">{t.values.pillar3Title}</h3>
-              <p className="text-xs sm:text-sm text-body-blue mt-2 leading-relaxed">
+              <h3 className="text-xl font-bold font-display text-deep-blue dark:text-white">{t.values.pillar3Title}</h3>
+              <p className="text-xs sm:text-sm text-body-blue/90 dark:text-slate-300 mt-2 leading-relaxed">
                 {t.values.pillar3Desc}
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t border-sky-200/40 dark:border-white/10 text-xs font-semibold text-teal-700 dark:text-teal-300 flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-teal" /> {t.values.pillar3Check}
+            <div className="mt-6 pt-4 border-t border-sky-100 dark:border-white/10">
+              <div className="p-2.5 rounded-xl bg-[#e2f4ef] text-teal-800 dark:bg-teal-950/50 dark:text-teal-200 text-xs font-bold flex items-center gap-2 border border-teal-600/15">
+                <CheckCircle2 className="w-4 h-4 text-teal" />
+                <span>{t.values.pillar3Check}</span>
+              </div>
             </div>
           </div>
         </div>
 
         {/* BOTTOM: VIDEO DEMO & PROGRESS STATUS */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center pt-4">
-          {/* VIDEO PLAYER CARD (7/12) */}
-          <div className="lg:col-span-7 space-y-4">
+          {/* CINEMA GAMEPLAY DEMO THEATER (7/12 - Matching Framer #080e19 Theater) */}
+          <div className="lg:col-span-7 rounded-[32px] p-6 sm:p-7 bg-[#080e19] border border-slate-400/25 shadow-2xl space-y-5 text-white">
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-[11px] font-bold text-ocean-blue dark:text-sky-300 uppercase tracking-wider block">
+                <span className="text-[11px] font-bold text-sky-400 uppercase tracking-wider block">
                   {t.values.videoBadge}
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-bold font-display text-deep-blue mt-0.5">{t.values.videoTitle}</h3>
+                <h3 className="text-xl sm:text-2xl font-bold font-display text-white mt-0.5">
+                  {t.values.videoTitle}
+                </h3>
               </div>
-              <span className="text-xs px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-950/60 text-ocean-blue dark:text-sky-300 font-bold border border-sky-200/60 dark:border-sky-800/60">
+              <span className="text-xs px-3.5 py-1.5 rounded-full bg-[#182438] text-sky-300 font-bold border border-white/20 shadow-xs">
                 {t.values.videoDuration}
               </span>
             </div>
 
-            <div className="relative rounded-3xl sm:rounded-[32px] overflow-hidden shadow-2xl shadow-sky-950/20 bg-slate-900 group">
-              <div className="relative h-72 sm:h-96 lg:h-[420px] w-full">
+            <div className="relative rounded-[24px] overflow-hidden shadow-2xl bg-[#030810] border border-white/15 group">
+              <div className="relative h-72 sm:h-96 lg:h-[400px] w-full">
                 <Image
                   src="/assets/act07_video_thumb.png"
                   alt="Video Gameplay Thumbnail"
@@ -136,29 +147,25 @@ export default function ValueAndShowcaseSection() {
               </div>
 
               {/* Bottom Video Bar */}
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex items-center justify-between text-white text-xs">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-4 flex items-center justify-between text-white text-xs">
                 <span>{t.values.videoCaption}</span>
                 <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md">{t.values.videoLabel}</span>
               </div>
             </div>
 
-            {/* Sub-thumbnails (Frameless Minimal Pills) */}
-            <div className="grid grid-cols-4 gap-2 text-center text-[10px] text-body-blue">
-              <div className="p-2 rounded-xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm shadow-xs">
-                <span className="font-bold text-deep-blue block">{t.values.tabExplore}</span>
-                <span className="text-[9px] text-body-blue/70">{t.values.tabExploreSub}</span>
+            {/* 4 Gameplay Chapters (Matching Framer: 01. Bản đồ, 02. Huy hiệu, 03. Ấn Ký, 04. Ký Ức) */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center text-xs">
+              <div className="py-2.5 px-3 rounded-full bg-[#111c2c] border border-white/15 text-slate-300 font-medium">
+                <span className="text-sky-400 font-bold mr-1">01.</span>{t.values.tabExplore}
               </div>
-              <div className="p-2 rounded-xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm shadow-xs">
-                <span className="font-bold text-deep-blue block">{t.values.tabBadge}</span>
-                <span className="text-[9px] text-body-blue/70">{t.values.tabBadgeSub}</span>
+              <div className="py-2.5 px-3 rounded-full bg-[#111c2c] border border-white/15 text-slate-300 font-medium">
+                <span className="text-amber-400 font-bold mr-1">02.</span>{t.values.tabBadge}
               </div>
-              <div className="p-2 rounded-xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm shadow-xs">
-                <span className="font-bold text-deep-blue block">{t.values.tabSeal}</span>
-                <span className="text-[9px] text-body-blue/70">{t.values.tabSealSub}</span>
+              <div className="py-2.5 px-3 rounded-full bg-[#111c2c] border border-white/15 text-slate-300 font-medium">
+                <span className="text-purple-400 font-bold mr-1">03.</span>{t.values.tabSeal}
               </div>
-              <div className="p-2 rounded-xl bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm shadow-xs">
-                <span className="font-bold text-deep-blue block">{t.values.tabScene}</span>
-                <span className="text-[9px] text-body-blue/70">{t.values.tabSceneSub}</span>
+              <div className="py-2.5 px-3 rounded-full bg-[#111c2c] border border-white/15 text-slate-300 font-medium">
+                <span className="text-teal-400 font-bold mr-1">04.</span>{t.values.tabScene}
               </div>
             </div>
           </div>

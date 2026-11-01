@@ -38,12 +38,13 @@ export default function ProblemSection() {
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1.5" />
             </a>
 
-            {/* Photographic Memory Diptych (Frameless Organic Overlap) */}
-            <div className="relative mt-8 pt-4 pb-2">
+            {/* Photographic Memory Diptych (Authentic Polaroid Postcards matching Framer) */}
+            <div className="relative mt-8 pt-2 pb-4">
               <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-6 sm:gap-0 relative">
-                {/* Photo 1 (Left - Cultural Traveler) */}
-                <div className="relative w-full max-w-[320px] sm:w-[52%] rotate-[-2deg] hover:rotate-0 hover:z-20 transition-all duration-500 group">
-                  <div className="relative h-60 sm:h-72 w-full rounded-2xl overflow-hidden shadow-xl shadow-slate-900/10">
+                {/* Postcard 1 (Left - Cultural Traveler) */}
+                <div className="relative w-[280px] sm:w-[290px] p-3 pb-6 bg-[#fffdf6] dark:bg-[#1a202c] border border-amber-900/15 dark:border-amber-700/30 rounded-[2px] shadow-[0px_2px_4px_rgba(65,48,26,0.12),0px_12px_24px_-8px_rgba(65,48,26,0.22)] rotate-[-3deg] hover:rotate-0 hover:z-20 transition-all duration-500 group shrink-0">
+                  {/* Photo Container */}
+                  <div className="relative h-60 w-full rounded-xs overflow-hidden border border-stone-800/10">
                     <Image
                       src="/assets/act02_postcard_left.webp"
                       alt="Saigon Cultural Traveler"
@@ -51,25 +52,28 @@ export default function ProblemSection() {
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                  <div className="pt-2.5 px-1 flex items-center justify-between text-body-blue">
-                    <span className="font-handwriting text-lg sm:text-xl font-bold text-deep-blue tracking-wide">
+
+                  {/* Postal Seal Stamp on Card 1 */}
+                  <div className="absolute bottom-11 right-3 w-16 h-16 rounded-full border-2 border-dashed border-red-700/75 bg-[#fffdf6]/90 dark:bg-slate-900/90 backdrop-blur-xs flex flex-col items-center justify-center text-[8px] font-bold text-red-800 dark:text-red-400 uppercase tracking-widest rotate-[14deg] z-10 pointer-events-none shadow-xs">
+                    <span className="leading-tight">SAIGON</span>
+                    <span className="text-[7px] leading-tight">HIST 26</span>
+                  </div>
+
+                  {/* Polaroid Chin Captions */}
+                  <div className="pt-3 px-1 space-y-0.5">
+                    <span className="font-handwriting text-xl font-bold text-[#92400E] dark:text-amber-200 block leading-tight">
                       {t.problem.postcardTag1}
                     </span>
-                    <span className="text-[10px] uppercase font-mono tracking-widest text-body-blue/60 font-semibold">
+                    <span className="text-[10px] uppercase font-mono tracking-widest text-stone-500 dark:text-slate-400 font-semibold block">
                       #Saigon2026
                     </span>
                   </div>
                 </div>
 
-                {/* Photo 2 (Right - Heritage Corner) */}
-                <div className="relative w-full max-w-[320px] sm:w-[52%] sm:-ml-10 sm:mt-10 rotate-[2.5deg] hover:rotate-0 hover:z-20 transition-all duration-500 group">
-                  {/* Subtle heritage postal seal accent */}
-                  <div className="absolute -top-3 right-5 w-12 h-12 rounded-full border border-dashed border-red-700/50 bg-red-600/10 backdrop-blur-xs flex flex-col items-center justify-center text-[7px] font-bold text-red-800 uppercase tracking-widest rotate-[14deg] z-20 pointer-events-none shadow-xs">
-                    <span>SAIGON</span>
-                    <span className="text-[6px]">HIST 26</span>
-                  </div>
-
-                  <div className="relative h-60 sm:h-72 w-full rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/15">
+                {/* Postcard 2 (Right - Heritage Corner) */}
+                <div className="relative w-[280px] sm:w-[290px] p-3 pb-6 bg-[#fffdf6] dark:bg-[#1a202c] border border-amber-900/15 dark:border-amber-700/30 rounded-[2px] shadow-[0px_2px_4px_rgba(65,48,26,0.12),0px_12px_24px_-8px_rgba(65,48,26,0.22)] sm:-ml-4 sm:mt-7 rotate-[3deg] hover:rotate-0 hover:z-20 transition-all duration-500 group shrink-0 z-10">
+                  {/* Photo Container */}
+                  <div className="relative h-60 w-full rounded-xs overflow-hidden border border-stone-800/10">
                     <Image
                       src="/assets/act02_postcard_right.webp"
                       alt="Saigon Heritage Corner"
@@ -78,11 +82,18 @@ export default function ProblemSection() {
                     />
                   </div>
 
-                  <div className="pt-2.5 px-1 flex items-center justify-between text-body-blue">
-                    <span className="font-handwriting text-lg sm:text-xl font-bold text-deep-blue tracking-wide">
+                  {/* Postal Seal Stamp on Card 2 */}
+                  <div className="absolute bottom-11 right-3 w-16 h-16 rounded-full border-2 border-dashed border-red-700/75 bg-[#fffdf6]/90 dark:bg-slate-900/90 backdrop-blur-xs flex flex-col items-center justify-center text-[8px] font-bold text-red-800 dark:text-red-400 uppercase tracking-widest rotate-[-8deg] z-10 pointer-events-none shadow-xs">
+                    <span className="leading-tight">SAIGON</span>
+                    <span className="text-[7px] leading-tight">HIST 26</span>
+                  </div>
+
+                  {/* Polaroid Chin Captions */}
+                  <div className="pt-3 px-1 space-y-0.5">
+                    <span className="font-handwriting text-xl font-bold text-[#92400E] dark:text-amber-200 block leading-tight">
                       {t.problem.postcardTag2}
                     </span>
-                    <span className="text-[10px] uppercase font-mono tracking-widest text-body-blue/60 font-semibold">
+                    <span className="text-[10px] uppercase font-mono tracking-widest text-stone-500 dark:text-slate-400 font-semibold block">
                       District 1
                     </span>
                   </div>
@@ -112,48 +123,48 @@ export default function ProblemSection() {
               </p>
             </div>
 
-            {/* 3 Heritage Discovery Beats (Frameless rows with soft ambient glow) */}
-            <div className="space-y-4 pt-1">
+            {/* 3 Heritage Discovery Beats (Tinted Soft Cards matching Framer) */}
+            <div className="space-y-3.5 pt-1">
               {/* 1. Cultural */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 hover:bg-white/80 dark:hover:bg-slate-800/60 group">
-                <div className="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-800 dark:text-amber-300 flex items-center justify-center shrink-0 shadow-xs transition-transform group-hover:scale-110">
-                  <Landmark className="w-6 h-6" />
+              <div className="flex items-center gap-4 p-4 sm:p-4.5 rounded-2xl bg-[#FDF2E2] dark:bg-amber-950/30 border border-white/80 dark:border-amber-700/30 shadow-xs transition-all duration-300 hover:shadow-sm group">
+                <div className="w-11 h-11 rounded-xl bg-white/80 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 flex items-center justify-center shrink-0 shadow-xs transition-transform group-hover:scale-105">
+                  <Landmark className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm sm:text-base font-bold text-deep-blue group-hover:text-ocean-blue transition-colors">
+                  <h4 className="text-sm sm:text-base font-bold text-deep-blue dark:text-amber-100 group-hover:text-ocean-blue transition-colors">
                     {t.problem.pillar1Title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-body-blue dark:text-slate-300 mt-1 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-body-blue/85 dark:text-slate-300 mt-0.5 leading-relaxed">
                     {t.problem.pillar1Desc}
                   </p>
                 </div>
               </div>
 
               {/* 2. Night */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 hover:bg-white/80 dark:hover:bg-slate-800/60 group">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 flex items-center justify-center shrink-0 shadow-xs transition-transform group-hover:scale-110">
-                  <Moon className="w-6 h-6" />
+              <div className="flex items-center gap-4 p-4 sm:p-4.5 rounded-2xl bg-[#EDF3FD] dark:bg-indigo-950/30 border border-white/80 dark:border-indigo-700/30 shadow-xs transition-all duration-300 hover:shadow-sm group">
+                <div className="w-11 h-11 rounded-xl bg-white/80 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 flex items-center justify-center shrink-0 shadow-xs transition-transform group-hover:scale-105">
+                  <Moon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm sm:text-base font-bold text-deep-blue group-hover:text-ocean-blue transition-colors">
+                  <h4 className="text-sm sm:text-base font-bold text-deep-blue dark:text-indigo-100 group-hover:text-ocean-blue transition-colors">
                     {t.problem.pillar2Title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-body-blue dark:text-slate-300 mt-1 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-body-blue/85 dark:text-slate-300 mt-0.5 leading-relaxed">
                     {t.problem.pillar2Desc}
                   </p>
                 </div>
               </div>
 
               {/* 3. Digital */}
-              <div className="flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 hover:bg-white/80 dark:hover:bg-slate-800/60 group">
-                <div className="w-12 h-12 rounded-2xl bg-teal-500/15 text-teal-700 dark:text-teal-300 flex items-center justify-center shrink-0 shadow-xs transition-transform group-hover:scale-110">
-                  <Cpu className="w-6 h-6" />
+              <div className="flex items-center gap-4 p-4 sm:p-4.5 rounded-2xl bg-[#EAF7F0] dark:bg-teal-950/30 border border-white/80 dark:border-teal-700/30 shadow-xs transition-all duration-300 hover:shadow-sm group">
+                <div className="w-11 h-11 rounded-xl bg-white/80 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 flex items-center justify-center shrink-0 shadow-xs transition-transform group-hover:scale-105">
+                  <Cpu className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm sm:text-base font-bold text-deep-blue group-hover:text-ocean-blue transition-colors">
+                  <h4 className="text-sm sm:text-base font-bold text-deep-blue dark:text-teal-100 group-hover:text-ocean-blue transition-colors">
                     {t.problem.pillar3Title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-body-blue dark:text-slate-300 mt-1 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-body-blue/85 dark:text-slate-300 mt-0.5 leading-relaxed">
                     {t.problem.pillar3Desc}
                   </p>
                 </div>

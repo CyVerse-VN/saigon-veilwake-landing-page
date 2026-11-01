@@ -10,26 +10,6 @@ export default function Footer() {
 
   return (
     <footer className="relative pt-16 pb-12 overflow-hidden">
-      {/* Decorative floral accents cropped from reference */}
-      <div className="absolute bottom-0 left-0 w-36 sm:w-48 opacity-60 pointer-events-none select-none">
-        <Image
-          src="/assets/footer_floral_left.png"
-          alt=""
-          width={200}
-          height={106}
-          className="object-contain"
-        />
-      </div>
-      <div className="absolute bottom-0 right-0 w-36 sm:w-48 opacity-60 pointer-events-none select-none">
-        <Image
-          src="/assets/footer_floral_right.png"
-          alt=""
-          width={224}
-          height={106}
-          className="object-contain"
-        />
-      </div>
-
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Logo & Tagline */}

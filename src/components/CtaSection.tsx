@@ -47,10 +47,10 @@ export default function CtaSection({ onOpenDemo }: { onOpenDemo?: () => void }) 
                       el?.scrollIntoView({ behavior: "smooth" });
                     }
               }
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-ocean-blue text-white hover:bg-deep-blue transition-all font-semibold text-sm sm:text-base shadow-card hover:shadow-floating"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-ocean-blue text-white hover:bg-deep-blue transition-all font-semibold text-sm sm:text-base shadow-card hover:shadow-floating group"
             >
-              <PlayCircle className="w-5 h-5" />
               <span>{t.cta.btnDemo}</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
 
             <Link

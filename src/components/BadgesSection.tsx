@@ -33,8 +33,8 @@ export default function BadgesSection() {
             <BadgePersonalizer />
           </div>
 
-          {/* RIGHT COLUMN: INTERACTIVE MOBILE APP PREVIEW (INT-02) */}
-          <div className="lg:col-span-5 space-y-6">
+          {/* RIGHT COLUMN: INTERACTIVE MOBILE APP PREVIEW (INT-02 - MATCHING FRAMER APP SHOWCASE CARD) */}
+          <div className="lg:col-span-5 p-6 sm:p-8 rounded-[28px] bg-[#F7FBFF] dark:bg-slate-900/80 border border-white/95 dark:border-white/10 shadow-xl shadow-sky-950/5">
             <InteractiveAppPreview />
           </div>
         </div>

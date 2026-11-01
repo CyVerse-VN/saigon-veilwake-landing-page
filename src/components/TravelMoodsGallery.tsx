@@ -138,6 +138,49 @@ export default function TravelMoodsGallery() {
       <div className="text-[11px] text-body-blue/60 italic">
         {t.moods.note}
       </div>
+
+      {/* Saigon Architecture & Morning Ritual (Framed Heritage Photography) */}
+      <div className="pt-4 border-t border-sky-200/50 dark:border-white/10 space-y-3">
+        <div className="flex items-center justify-between text-xs">
+          <span className="font-bold text-deep-blue dark:text-sky-200 text-xs uppercase tracking-wider flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-ocean-blue dark:text-sky-300" />
+            {t.moods.ritualTitle}
+          </span>
+        </div>
+        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+          {/* Card 1: French-Colonial Heritage — Saigon Post Office (Vertical Portrait) */}
+          <div className="relative aspect-[3/4] min-h-[220px] rounded-2xl overflow-hidden shadow-md group border border-white/60 dark:border-white/10">
+            <Image
+              src="/assets/hero_french_colonial_post_office.jpg"
+              alt={t.moods.ritualPostOffice}
+              fill
+              sizes="(max-width: 640px) 50vw, 240px"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/90 via-deep-blue/30 to-transparent flex items-end p-3 sm:p-3.5">
+              <span className="text-xs text-white font-medium leading-tight line-clamp-2 drop-shadow-sm">
+                {t.moods.ritualPostOffice}
+              </span>
+            </div>
+          </div>
+
+          {/* Card 2: Morning Coffee — Vietnamese Phin (Vertical Portrait) */}
+          <div className="relative aspect-[3/4] min-h-[220px] rounded-2xl overflow-hidden shadow-md group border border-white/60 dark:border-white/10">
+            <Image
+              src="/assets/hero_vietnamese_phin_coffee.jpg"
+              alt={t.moods.ritualCoffee}
+              fill
+              sizes="(max-width: 640px) 50vw, 240px"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/90 via-deep-blue/30 to-transparent flex items-end p-3 sm:p-3.5">
+              <span className="text-xs text-white font-medium leading-tight line-clamp-2 drop-shadow-sm">
+                {t.moods.ritualCoffee}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
