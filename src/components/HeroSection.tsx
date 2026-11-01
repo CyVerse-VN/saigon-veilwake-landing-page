@@ -29,8 +29,8 @@ export default function HeroSection({ onOpenDemo }: { onOpenDemo?: () => void })
           {/* LEFT COLUMN: HERO NARRATIVE (ACT 01) */}
           <div className="lg:col-span-7 space-y-6">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-100/90 text-ocean-blue text-xs font-bold tracking-wider uppercase border border-sky-200 shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-ocean-blue" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-100/90 dark:bg-sky-950/60 text-ocean-blue dark:text-sky-300 text-xs font-bold tracking-wider uppercase border border-sky-200 dark:border-sky-800/60 shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-ocean-blue dark:text-sky-300" />
               <span>{t.hero.eyebrow}</span>
             </div>
 
@@ -63,22 +63,22 @@ export default function HeroSection({ onOpenDemo }: { onOpenDemo?: () => void })
                         el?.scrollIntoView({ behavior: "smooth" });
                       }
                 }
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-white/60 dark:border-white/20 bg-white/75 dark:bg-slate-800/80 backdrop-blur-md text-deep-blue dark:text-white hover:bg-white dark:hover:bg-slate-700 transition-all font-semibold text-sm sm:text-base shadow-sm"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full border border-white/60 dark:border-white/10 bg-white/75 dark:bg-slate-800/80 backdrop-blur-md text-slate-800 dark:text-white hover:bg-white dark:hover:bg-slate-700 transition-all font-semibold text-sm sm:text-base shadow-sm"
               >
-                <PlayCircle className="w-4 h-4 text-ocean-blue" />
+                <PlayCircle className="w-4 h-4 text-ocean-blue dark:text-sky-400" />
                 <span>{t.hero.ctaSecondary}</span>
               </button>
             </div>
 
             {/* 3 Microproof Tags */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-6 pt-2 text-xs font-semibold text-body-blue">
-              <span className="flex items-center gap-1.5 bg-white/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/80 shadow-xs">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-6 pt-2 text-xs font-semibold">
+              <span className="flex items-center gap-1.5 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/80 dark:border-white/10 shadow-xs text-body-blue dark:text-slate-200">
                 <MapPin className="w-3.5 h-3.5 text-teal" /> {t.hero.tagRealPlace}
               </span>
-              <span className="flex items-center gap-1.5 bg-white/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/80 shadow-xs">
+              <span className="flex items-center gap-1.5 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/80 dark:border-white/10 shadow-xs text-body-blue dark:text-slate-200">
                 <Landmark className="w-3.5 h-3.5 text-sun-gold" /> {t.hero.tagCulture}
               </span>
-              <span className="flex items-center gap-1.5 bg-white/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/80 shadow-xs">
+              <span className="flex items-center gap-1.5 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/80 dark:border-white/10 shadow-xs text-body-blue dark:text-slate-200">
                 <Sparkles className="w-3.5 h-3.5 text-veil-lilac" /> {t.hero.tagAR}
               </span>
             </div>
@@ -86,13 +86,13 @@ export default function HeroSection({ onOpenDemo }: { onOpenDemo?: () => void })
             {/* HERO VISUAL PORT (Seamless Cinematic Window) */}
             <div className="relative rounded-3xl sm:rounded-[32px] overflow-hidden group mt-6 shadow-2xl shadow-sky-950/10 transition-all duration-500">
               {/* Day-to-Night Toggle Pill (INT-01) */}
-              <div className="absolute top-4 right-4 z-20 flex items-center bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-full p-1 border border-white/40 dark:border-white/10 shadow-sm">
+              <div className="absolute top-4 right-4 z-20 flex items-center bg-white/85 dark:bg-slate-900/85 backdrop-blur-xl rounded-full p-1 border border-white/50 dark:border-white/10 shadow-sm">
                 <button
                   onClick={() => setIsTwilight(false)}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
                     !isTwilight
-                      ? "bg-white text-deep-blue shadow-xs"
-                      : "text-body-blue hover:text-deep-blue"
+                      ? "bg-white text-slate-900 dark:bg-slate-800 dark:text-amber-200 shadow-xs"
+                      : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                   }`}
                 >
                   <Sun className="w-3.5 h-3.5 text-sun-gold" /> {t.hero.btnDay}
@@ -101,8 +101,8 @@ export default function HeroSection({ onOpenDemo }: { onOpenDemo?: () => void })
                   onClick={() => setIsTwilight(true)}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
                     isTwilight
-                      ? "bg-indigo-900 text-indigo-100 shadow-xs"
-                      : "text-body-blue hover:text-deep-blue"
+                      ? "bg-indigo-900 text-indigo-100 dark:bg-indigo-600 dark:text-white shadow-xs"
+                      : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
                   }`}
                 >
                   <Moon className="w-3.5 h-3.5 text-veil-lilac" /> {t.hero.btnTwilight}
@@ -129,12 +129,15 @@ export default function HeroSection({ onOpenDemo }: { onOpenDemo?: () => void })
 
                 {/* Twilight / Veil Layer (INT-01) */}
                 {isTwilight && (
-                  <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/70 via-indigo-900/30 to-transparent pointer-events-none animate-in fade-in duration-500">
-                    <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md text-deep-blue shadow-lg border border-veil-lilac/40">
-                      <span className="text-[10px] font-bold text-veil-lilac uppercase tracking-wider block">
-                        {t.hero.dayToNightBadge}
-                      </span>
-                      <p className="text-xs font-semibold mt-0.5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/80 via-indigo-900/30 to-transparent pointer-events-none animate-in fade-in duration-500">
+                    <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-950/85 backdrop-blur-xl text-white shadow-2xl border border-veil-lilac/50">
+                      <div className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-veil-lilac animate-pulse" />
+                        <span className="text-[10px] font-bold text-veil-lilac uppercase tracking-wider block">
+                          {t.hero.dayToNightBadge}
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-100 font-medium mt-1 leading-relaxed">
                         {t.hero.dayToNightDesc}
                       </p>
                     </div>

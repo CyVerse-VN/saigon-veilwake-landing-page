@@ -47,7 +47,7 @@ export default function TravelMoodsGallery() {
       {/* Editorial Rail Header */}
       <div className="flex items-start justify-between">
         <div>
-          <span className="text-[11px] font-bold uppercase tracking-wider text-ocean-blue block">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-ocean-blue dark:text-sky-300 block">
             {t.moods.headerBadge}
           </span>
           <h3 className="text-xl sm:text-2xl font-bold font-display text-deep-blue mt-1">
@@ -57,8 +57,8 @@ export default function TravelMoodsGallery() {
             {t.moods.subtitle}
           </p>
         </div>
-        <span className="text-xs px-2.5 py-1 rounded-full bg-sky-100/80 text-ocean-blue font-semibold flex items-center gap-1 shrink-0 border border-sky-200/50">
-          <Sparkles className="w-3 h-3 text-ocean-blue" /> {t.moods.intBadge}
+        <span className="text-xs px-2.5 py-1 rounded-full bg-sky-100/80 dark:bg-sky-950/60 text-ocean-blue dark:text-sky-300 font-semibold flex items-center gap-1 shrink-0 border border-sky-200/50 dark:border-sky-800/60">
+          <Sparkles className="w-3 h-3 text-ocean-blue dark:text-sky-300" /> {t.moods.intBadge}
         </span>
       </div>
 
@@ -114,7 +114,7 @@ export default function TravelMoodsGallery() {
       <div className="pt-4 border-t border-sky-200/50 dark:border-white/10 space-y-2">
         <div className="flex items-center justify-between text-xs">
           <span className="font-bold text-deep-blue text-sm">{currentMood.name}</span>
-          <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-sky-100/70 text-ocean-blue font-semibold border border-sky-200/40">
+          <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-sky-100/70 dark:bg-sky-950/60 text-ocean-blue dark:text-sky-300 font-semibold border border-sky-200/40 dark:border-sky-800/60">
             {currentMood.status}
           </span>
         </div>

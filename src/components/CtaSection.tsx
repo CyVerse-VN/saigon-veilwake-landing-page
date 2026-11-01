@@ -23,8 +23,8 @@ export default function CtaSection({ onOpenDemo }: { onOpenDemo?: () => void }) 
             />
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-100 text-ocean-blue text-xs font-bold tracking-wider uppercase border border-sky-200/60 mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-ocean-blue" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-100 dark:bg-sky-950/60 text-ocean-blue dark:text-sky-300 text-xs font-bold tracking-wider uppercase border border-sky-200/60 dark:border-sky-800/60 mb-4 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-ocean-blue dark:text-sky-300" />
             <span>{t.cta.badge}</span>
           </div>
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ShieldAlert, Camera, CheckCircle } from "lucide-react";
+import { Camera, CheckCircle } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTheme } from "@/context/ThemeContext";
 
@@ -103,11 +103,11 @@ export default function NightSection() {
                 onClick={() => setShowDetails(!showDetails)}
                 className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all ${
                   isNight
-                    ? "bg-cream text-slate-900 hover:bg-white hover:text-slate-950 shadow-amber-950/20"
+                    ? "bg-amber-100 text-amber-950 hover:bg-white hover:text-slate-950 shadow-lg shadow-black/25 border border-amber-200/60"
                     : "bg-ocean-blue text-white hover:bg-deep-blue shadow-sky-950/15"
                 }`}
               >
-                <Camera className={`w-4 h-4 ${isNight ? "text-ocean-blue" : "text-sky-200"}`} />
+                <Camera className={`w-4 h-4 ${isNight ? "text-amber-800" : "text-sky-200"}`} />
                 <span>{showDetails ? t.night.btnHide : t.night.btnShow}</span>
               </button>
 
@@ -118,27 +118,6 @@ export default function NightSection() {
               }`}>
                 <CheckCircle className="w-3.5 h-3.5 text-teal" /> {t.night.labelPrototype}
               </span>
-            </div>
-
-            {/* Safety Copy (Mandatory by Spec - 2 High-Contrast Palettes) */}
-            <div className={`flex items-start gap-3 p-4 rounded-2xl text-xs max-w-xl transition-all ${
-              isNight
-                ? "bg-amber-950/40 border border-amber-500/30 text-slate-200 backdrop-blur-md"
-                : "bg-amber-50/90 border border-amber-300/80 text-amber-950 shadow-xs backdrop-blur-sm"
-            }`}>
-              <ShieldAlert className={`w-5 h-5 shrink-0 mt-0.5 ${
-                isNight ? "text-amber-300" : "text-amber-700"
-              }`} />
-              <p className="leading-relaxed">
-                <strong className={`font-bold ${
-                  isNight ? "text-amber-200" : "text-amber-900"
-                }`}>
-                  {t.night.safetyWarningTitle}
-                </strong>{" "}
-                <span className={isNight ? "text-slate-300" : "text-amber-900/90"}>
-                  {t.night.safetyWarningText}
-                </span>
-              </p>
             </div>
           </div>
 

@@ -38,6 +38,11 @@ export const metadata: Metadata = {
     "HIST 2026",
   ],
   authors: [{ name: "Saigon: Veilwake Team" }],
+  icons: {
+    icon: "/assets/logo_emblem.png",
+    shortcut: "/assets/logo_emblem.png",
+    apple: "/assets/logo_emblem.png",
+  },
   openGraph: {
     title: "Saigon: Veilwake — Interactive Travel & Cultural AR",
     description:

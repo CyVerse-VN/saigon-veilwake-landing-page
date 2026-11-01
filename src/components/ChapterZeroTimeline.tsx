@@ -22,33 +22,45 @@ export default function ChapterZeroTimeline() {
             {t.chapterZero.subtitle}
           </p>
         </div>
-        <span className="text-xs px-3.5 py-1.5 rounded-full bg-cream text-amber-900 font-bold border border-amber-200/80 shrink-0 self-start sm:self-auto shadow-xs">
+        <span className="text-xs px-3.5 py-1.5 rounded-full bg-amber-100/90 dark:bg-amber-950/60 text-amber-950 dark:text-amber-200 font-bold border border-amber-200/80 dark:border-amber-700/50 shrink-0 self-start sm:self-auto shadow-xs">
           {t.chapterZero.canonLock}
         </span>
       </div>
 
-      {/* Two Story Stages Layout (Side-by-side on desktop) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch relative">
-        {/* Postcard 1: Chặng 1 - Ban Ngày */}
+      {/* Two Story Stages Layout (Frameless, Distinct Day vs Night Atmosphere) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch relative">
+        {/* Subtle center connector showing time progression from Day to Night (Desktop) */}
+        <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 items-center justify-center pointer-events-none">
+          <div className="flex flex-col items-center gap-1 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-2.5 py-1.5 rounded-full border border-sky-100 dark:border-white/10 shadow-sm text-[10px] font-bold text-body-blue">
+            <span className="text-[11px] text-amber-500">☼</span>
+            <span className="text-[9px] uppercase tracking-wider text-body-blue/60 font-mono">18:00</span>
+            <span className="text-[11px] text-veil-lilac">☽</span>
+          </div>
+        </div>
+
+        {/* Chặng 1: Ban Ngày (Frameless with Radiant Daylight Atmosphere) */}
         <div
           onClick={() => setActiveStage(1)}
-          className={`cursor-pointer rounded-3xl p-6 sm:p-8 transition-all duration-300 relative flex flex-col justify-between ${
+          className={`cursor-pointer rounded-3xl p-6 sm:p-7 transition-all duration-300 relative flex flex-col justify-between ${
             activeStage === 1
-              ? "bg-amber-50/60 dark:bg-amber-950/20 shadow-xl shadow-amber-900/5 ring-2 ring-sun-gold/50"
-              : "bg-white/60 dark:bg-slate-900/40 hover:bg-white/80 dark:hover:bg-slate-800/80 shadow-md"
+              ? "bg-gradient-to-b from-amber-100/40 via-amber-50/20 to-transparent dark:from-amber-950/25 dark:via-transparent dark:to-transparent shadow-sm"
+              : "bg-gradient-to-b from-amber-50/20 to-transparent hover:from-amber-100/30 opacity-90 hover:opacity-100"
           }`}
         >
           <div>
             <div className="flex items-center justify-between text-xs mb-3">
-              <span className="font-bold text-amber-800 dark:text-amber-300 flex items-center gap-1.5 uppercase tracking-wide">
-                <Sun className="w-4 h-4 text-sun-gold" /> {t.chapterZero.stage1Header}
+              <span className="font-bold text-amber-800 dark:text-amber-300 flex items-center gap-2 uppercase tracking-wide">
+                <span className="w-7 h-7 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300 flex items-center justify-center shrink-0 shadow-xs">
+                  <Sun className="w-4 h-4 text-sun-gold" />
+                </span>
+                {t.chapterZero.stage1Header}
               </span>
-              <span className="text-[10px] px-2.5 py-1 rounded-full bg-white/80 dark:bg-slate-800 text-amber-900 dark:text-amber-200 font-semibold shadow-xs">
+              <span className="text-[10px] px-3 py-1 rounded-full bg-amber-100/80 dark:bg-amber-950/50 text-amber-900 dark:text-amber-200 font-semibold border border-amber-200/50 shadow-xs">
                 {t.chapterZero.stage1Tag}
               </span>
             </div>
 
-            <h4 className="text-xl font-bold font-display text-deep-blue">
+            <h4 className="text-xl sm:text-2xl font-bold font-display text-deep-blue mt-1">
               {t.chapterZero.stage1Title}
             </h4>
 
@@ -60,9 +72,10 @@ export default function ChapterZeroTimeline() {
                 fill
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
+              <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 via-transparent to-white/20 pointer-events-none" />
             </div>
 
-            <ul className="text-xs sm:text-sm text-body-blue space-y-2 pt-1">
+            <ul className="text-xs sm:text-sm text-body-blue space-y-2.5 pt-1">
               <li className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-teal shrink-0" />
                 <span>{t.chapterZero.stage1Item1}</span>
@@ -74,32 +87,38 @@ export default function ChapterZeroTimeline() {
             </ul>
           </div>
 
-          <div className="mt-6 pt-4 border-t border-amber-200/50 text-xs font-bold text-ocean-blue flex items-center justify-between">
-            <span>{t.chapterZero.stage1Reward}</span>
+          <div className="mt-6 pt-3.5 border-t border-amber-200/50 dark:border-amber-800/30 text-xs font-bold text-ocean-blue flex items-center justify-between">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-sun-gold" />
+              {t.chapterZero.stage1Reward}
+            </span>
             <span className="text-sm">→</span>
           </div>
         </div>
 
-        {/* Postcard 2: Chặng 2 - Buổi Tối */}
+        {/* Chặng 2: Buổi Tối (Frameless with Ethereal Midnight Atmosphere) */}
         <div
           onClick={() => setActiveStage(2)}
-          className={`cursor-pointer rounded-3xl p-6 sm:p-8 transition-all duration-300 relative flex flex-col justify-between ${
+          className={`cursor-pointer rounded-3xl p-6 sm:p-7 transition-all duration-300 relative flex flex-col justify-between ${
             activeStage === 2
-              ? "bg-indigo-50/70 dark:bg-indigo-950/30 shadow-xl shadow-indigo-950/10 ring-2 ring-veil-lilac/50"
-              : "bg-white/60 dark:bg-slate-900/40 hover:bg-white/80 dark:hover:bg-slate-800/80 shadow-md"
+              ? "bg-gradient-to-b from-indigo-100/40 via-purple-50/20 to-transparent dark:from-indigo-950/35 dark:via-transparent dark:to-transparent shadow-sm"
+              : "bg-gradient-to-b from-indigo-50/20 to-transparent hover:from-indigo-100/30 opacity-90 hover:opacity-100"
           }`}
         >
           <div>
             <div className="flex items-center justify-between text-xs mb-3">
-              <span className="font-bold text-indigo-900 dark:text-indigo-300 flex items-center gap-1.5 uppercase tracking-wide">
-                <Moon className="w-4 h-4 text-veil-lilac" /> {t.chapterZero.stage2Header}
+              <span className="font-bold text-indigo-950 dark:text-indigo-200 flex items-center gap-2 uppercase tracking-wide">
+                <span className="w-7 h-7 rounded-full bg-indigo-100 text-indigo-900 dark:bg-indigo-900/60 dark:text-indigo-200 flex items-center justify-center shrink-0 shadow-xs">
+                  <Moon className="w-4 h-4 text-veil-lilac" />
+                </span>
+                {t.chapterZero.stage2Header}
               </span>
-              <span className="text-[10px] px-2.5 py-1 rounded-full bg-white/80 dark:bg-slate-800 text-indigo-900 dark:text-indigo-200 font-semibold shadow-xs">
+              <span className="text-[10px] px-3 py-1 rounded-full bg-indigo-100/80 dark:bg-indigo-950/50 text-indigo-900 dark:text-indigo-200 font-semibold border border-indigo-200/50 shadow-xs">
                 {t.chapterZero.stage2Tag}
               </span>
             </div>
 
-            <h4 className="text-xl font-bold font-display text-deep-blue">
+            <h4 className="text-xl sm:text-2xl font-bold font-display text-deep-blue mt-1">
               {t.chapterZero.stage2Title}
             </h4>
 
@@ -111,9 +130,10 @@ export default function ChapterZeroTimeline() {
                 fill
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-indigo-950/40 via-transparent to-transparent pointer-events-none" />
             </div>
 
-            <ul className="text-xs sm:text-sm text-body-blue space-y-2 pt-1">
+            <ul className="text-xs sm:text-sm text-body-blue space-y-2.5 pt-1">
               <li className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-veil-lilac shrink-0" />
                 <span>{t.chapterZero.stage2Item1}</span>
@@ -125,8 +145,11 @@ export default function ChapterZeroTimeline() {
             </ul>
           </div>
 
-          <div className="mt-6 pt-4 border-t border-indigo-200/50 text-xs font-bold text-night-violet dark:text-veil-lilac flex items-center justify-between">
-            <span>{t.chapterZero.stage2Reward}</span>
+          <div className="mt-6 pt-3.5 border-t border-indigo-200/50 dark:border-indigo-800/30 text-xs font-bold text-night-violet dark:text-veil-lilac flex items-center justify-between">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-veil-lilac" />
+              {t.chapterZero.stage2Reward}
+            </span>
             <span className="text-sm">→</span>
           </div>
         </div>

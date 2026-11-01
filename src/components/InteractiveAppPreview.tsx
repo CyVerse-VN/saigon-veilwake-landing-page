@@ -31,7 +31,7 @@ export default function InteractiveAppPreview() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <span className="text-[11px] font-bold uppercase tracking-wider text-ocean-blue block">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-ocean-blue dark:text-sky-300 block">
             {t.appPreview.badge}
           </span>
           <h3 className="text-xl sm:text-2xl font-bold font-display text-deep-blue mt-0.5">
@@ -41,7 +41,7 @@ export default function InteractiveAppPreview() {
             {t.appPreview.subtitle}
           </p>
         </div>
-        <span className="text-xs px-2.5 py-1 rounded-full bg-teal-50 text-teal-700 border border-teal-200/60 font-bold shrink-0">
+        <span className="text-xs px-2.5 py-1 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200/60 dark:border-teal-800/60 font-bold shrink-0">
           {t.appPreview.specTag}
         </span>
       </div>
@@ -126,7 +126,7 @@ export default function InteractiveAppPreview() {
 
                 {/* Discovery Bottom Card (Editorial Travel UI) */}
                 {selectedPlace ? (
-                  <div className="absolute bottom-20 left-3 right-3 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 shadow-lg border border-sky-border animate-in slide-in-from-bottom-2">
+                  <div className="absolute bottom-20 left-3 right-3 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl p-2.5 shadow-lg border border-sky-border dark:border-white/10 animate-in slide-in-from-bottom-2">
                     <div className="flex items-start gap-2.5">
                       <div className="relative w-14 h-14 rounded-xl overflow-hidden shrink-0 border border-sky-100 shadow-xs">
                         <Image
@@ -166,7 +166,7 @@ export default function InteractiveAppPreview() {
                     </div>
                   </div>
                 ) : (
-                  <div className="absolute bottom-20 left-3 right-3 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 shadow-lg border border-sky-border animate-in slide-in-from-bottom-2">
+                  <div className="absolute bottom-20 left-3 right-3 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl p-2.5 shadow-lg border border-sky-border dark:border-white/10 animate-in slide-in-from-bottom-2">
                     <div className="flex items-start gap-2.5">
                       <div className="relative w-14 h-14 rounded-xl overflow-hidden shrink-0 border border-sky-100 shadow-xs">
                         <Image
@@ -338,7 +338,7 @@ export default function InteractiveAppPreview() {
 
             {/* NPC DIALOG MODAL IF OPEN */}
             {npcOpen && (
-              <div className="absolute inset-x-3 bottom-20 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-xl border border-sky-border z-30 animate-in fade-in duration-200">
+              <div className="absolute inset-x-3 bottom-20 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl p-3 shadow-xl border border-sky-border dark:border-white/10 z-30 animate-in fade-in duration-200">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center p-0.5 border border-sky-200 overflow-hidden shrink-0">
@@ -407,7 +407,7 @@ export default function InteractiveAppPreview() {
 
             {/* 2X2 KÝ MÔN POPUP MENU */}
             {kyMonOpen && (
-              <div className="absolute inset-x-4 bottom-20 bg-white/95 backdrop-blur-lg rounded-2xl p-3 shadow-2xl border border-sky-border z-40 animate-in zoom-in-95 duration-200">
+              <div className="absolute inset-x-4 bottom-20 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg rounded-2xl p-3 shadow-2xl border border-sky-border dark:border-white/10 z-40 animate-in zoom-in-95 duration-200">
                 <div className="flex items-center justify-between mb-2 pb-1 border-b border-sky-100">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-ocean-blue">
                     {t.appPreview.kyMonTitle}
@@ -482,7 +482,7 @@ export default function InteractiveAppPreview() {
           </div>
 
           {/* BOTTOM THREE CONTROLS (SPEC COMPLIANT: NPC - KÝ MÔN - AR LENS) */}
-          <div className="px-5 py-3 bg-white/95 backdrop-blur-md border-t border-sky-border/80 flex items-center justify-between z-20">
+          <div className="px-5 py-3 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-sky-border/80 dark:border-white/10 flex items-center justify-between z-20">
             {/* Left: NPC Companion */}
             <button
               onClick={() => {

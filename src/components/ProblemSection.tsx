@@ -12,10 +12,10 @@ export default function ProblemSection() {
     <section id="trai-nghiem" className="py-16 sm:py-24 relative">
       {/* Editorial Chapter Waypoint Bridge */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 mb-10">
-        <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-widest text-ocean-blue/70">
+        <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-ocean-blue dark:text-sky-300 transition-colors duration-300">
           <span>{t.problem.badge}</span>
-          <div className="flex-1 h-px bg-gradient-to-r from-ocean-blue/30 via-sky-300/20 to-transparent" />
-          <span className="text-[10px] text-body-blue/60 font-mono">10°46&apos;47&quot;N · SÀI GÒN</span>
+          <div className="flex-1 h-px bg-gradient-to-r from-ocean-blue/30 via-sky-300/20 to-transparent dark:from-sky-400/40 dark:via-sky-400/10 dark:to-transparent" />
+          <span className="text-[10px] text-body-blue/70 dark:text-slate-400 font-mono">10°46&apos;47&quot;N · SÀI GÒN</span>
         </div>
       </div>
 
@@ -101,7 +101,7 @@ export default function ProblemSection() {
           {/* RIGHT COLUMN: TRAVELER'S FIELD JOURNAL (FRAMELESS EDITORIAL SPREAD) */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <span className="text-[11px] font-bold text-ocean-blue uppercase tracking-wider block">
+              <span className="text-[11px] font-bold text-ocean-blue dark:text-sky-300 uppercase tracking-wider block">
                 {t.problem.rightBadge}
               </span>
               <h3 className="text-2xl sm:text-3xl font-bold font-display text-deep-blue mt-1 leading-snug">

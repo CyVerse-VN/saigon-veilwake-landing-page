@@ -27,10 +27,10 @@ export default function ValueAndShowcaseSection() {
     <section id="video-demo" className="py-16 sm:py-24 relative">
       {/* Editorial Chapter Waypoint Bridge */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 mb-10">
-        <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-widest text-ocean-blue/70">
+        <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-ocean-blue dark:text-sky-300 transition-colors duration-300">
           <span>{t.values.badge}</span>
-          <div className="flex-1 h-px bg-gradient-to-r from-ocean-blue/30 via-sky-300/20 to-transparent" />
-          <span className="text-[10px] text-body-blue/60 font-mono">BẠCH THƯ DỰ ÁN & GAMEPLAY DEMO</span>
+          <div className="flex-1 h-px bg-gradient-to-r from-ocean-blue/30 via-sky-300/20 to-transparent dark:from-sky-400/40 dark:via-sky-400/10 dark:to-transparent" />
+          <span className="text-[10px] text-body-blue/70 dark:text-slate-400 font-mono">BẠCH THƯ DỰ ÁN & GAMEPLAY DEMO</span>
         </div>
       </div>
 
@@ -102,12 +102,12 @@ export default function ValueAndShowcaseSection() {
           <div className="lg:col-span-7 space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-[11px] font-bold text-ocean-blue uppercase tracking-wider block">
+                <span className="text-[11px] font-bold text-ocean-blue dark:text-sky-300 uppercase tracking-wider block">
                   {t.values.videoBadge}
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-bold font-display text-deep-blue mt-0.5">{t.values.videoTitle}</h3>
               </div>
-              <span className="text-xs px-3 py-1 rounded-full bg-sky-100 text-ocean-blue font-bold border border-sky-200/60">
+              <span className="text-xs px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-950/60 text-ocean-blue dark:text-sky-300 font-bold border border-sky-200/60 dark:border-sky-800/60">
                 {t.values.videoDuration}
               </span>
             </div>
@@ -166,7 +166,7 @@ export default function ValueAndShowcaseSection() {
           {/* PROGRESS CHECKLIST (5/12 - Frameless Editorial Column) */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <span className="text-[11px] font-bold text-ocean-blue uppercase tracking-wider block">
+              <span className="text-[11px] font-bold text-ocean-blue dark:text-sky-300 uppercase tracking-wider block">
                 {t.values.progressBadge}
               </span>
               <h3 className="text-2xl sm:text-3xl font-bold font-display text-deep-blue mt-1 leading-snug">

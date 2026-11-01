@@ -334,7 +334,7 @@ html.night-mode [class*="bg-indigo-50"] {
   border-color: rgba(168, 85, 247, 0.45) !important;
 }
 
-html.night-mode [class*="bg-cream"] {
+html.night-mode .bg-cream-dark {
   background-color: rgba(30, 24, 16, 0.65) !important;
   border-color: rgba(231, 170, 89, 0.35) !important;
 }

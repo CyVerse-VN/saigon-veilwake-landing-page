@@ -17,9 +17,9 @@ export const translations = {
       eyebrow: "EXPLORE BY DAY. AWAKEN BY NIGHT.",
       title: "Khám phá một Sài Gòn bạn chưa từng thấy.",
       description:
-        "Biến những chuyến tham quan thành hành trình phiêu lưu tương tác — khám phá văn hóa, lưu giữ kỷ niệm và đánh thức những bí ẩn AR ẩn sau thành phố.",
-      ctaPrimary: "Khám phá trải nghiệm",
-      ctaSecondary: "Xem Demo",
+        "Từ tiếng lanh canh của ly cà phê vợt buổi sớm đến vệt sáng neon huyền ảo dẫn lối qua những con hẻm cổ — biến mỗi chuyến đi thành hành trình tương tác văn hóa, lưu giữ bưu thiếp kỷ niệm và đánh thức những bí ẩn AR ẩn sau thành phố.",
+      ctaPrimary: "Bắt đầu hành trình",
+      ctaSecondary: "Xem Video Trải Nghiệm",
       tagRealPlace: "Địa điểm có thật",
       tagCulture: "Văn hóa địa phương",
       tagAR: "Trải nghiệm AR",
@@ -105,6 +105,11 @@ export const translations = {
       rightDesc:
         "Không áp đặt kịch bản rập khuôn. Du khách có thể thong thả dạo bộ từ công viên, bảo tàng đến các quán cà phê ngắm phố, để thành phố tự kể câu chuyện của mình qua từng toạ độ ký ức.",
       rightFooter: "Trực quan · Dễ tiếp cận mọi lứa tuổi",
+      insiderTipBadge: "Mẹo bản địa (Insider Tip)",
+      insiderTipText:
+        "Nên ghé thăm lúc sáng sớm khi ánh nắng chiếu nghiêng qua vòm me cổ thụ đường Công xã Paris và trước khi dòng xe tấp nập bắt đầu.",
+      bestTimeBadge: "Khung giờ lý tưởng",
+      bestTimeText: "06:30 - 08:30 (Thanh bình buổi sớm) · 18:00 - 20:30 (Sài Gòn lên đèn)",
     },
     badges: {
       badge: "04 · SƯU TẦM KỶ NIỆM VĂN HÓA",
@@ -119,7 +124,7 @@ export const translations = {
         "Mỗi huy hiệu là minh chứng bạn đã thực sự khám phá địa danh và hoàn thành thử thách.",
       btnDefault: "Mặc định",
       btnPersonalized: "Của tôi",
-      stampHeader: "BƯU TRIỆN SÀI GÒN",
+      stampHeader: "BƯU ĐIỆN SÀI GÒN",
       stampNo: "No. 01/1891",
       defaultBadgeTitle: "Huy hiệu Bưu Điện Trung Tâm",
       defaultBadgeSubtitle: "Kiến trúc Vòm & Lời Nhắn",
@@ -346,9 +351,9 @@ export const translations = {
       eyebrow: "EXPLORE BY DAY. AWAKEN BY NIGHT.",
       title: "Discover a Saigon You've Never Seen Before.",
       description:
-        "Transform everyday sightseeing into an interactive adventure — explore local culture, capture personal memories, and awaken hidden AR mysteries across the city.",
-      ctaPrimary: "Explore Experience",
-      ctaSecondary: "Watch Demo",
+        "From the rhythmic clink of early morning net-filter coffee spoons to glowing neon alleys after dusk — transform everyday sightseeing into an interactive cultural journey, preserving souvenir postcards and awakening hidden AR mysteries beneath the city.",
+      ctaPrimary: "Begin Your Journey",
+      ctaSecondary: "Watch Experience Demo",
       tagRealPlace: "Real Landmarks",
       tagCulture: "Local Culture",
       tagAR: "AR Experience",
@@ -434,6 +439,12 @@ export const translations = {
       rightDesc:
         "No rigid scripts. Stroll leisurely from parks and museums to street cafes, letting the city tell its own stories through coordinates of memory.",
       rightFooter: "Intuitive · Accessible for all ages",
+      insiderTipBadge: "Local Insider Tip",
+      insiderTipText:
+        "Visit in the early morning as golden sunlight filters through heritage tamarind trees along Paris Commune Square before rush hour begins.",
+      bestTimeBadge: "Best Time to Visit",
+      bestTimeText:
+        "06:30 - 08:30 AM (Serene Morning) · 06:00 - 08:30 PM (Illuminated Twilight)",
     },
     badges: {
       badge: "04 · CULTURAL SOUVENIR COLLECTION",
@@ -448,7 +459,7 @@ export const translations = {
         "Each badge verifies that you genuinely explored the landmark and completed cultural observations.",
       btnDefault: "Default",
       btnPersonalized: "Mine",
-      stampHeader: "SAIGON POSTAL STAMP",
+      stampHeader: "SAIGON POST OFFICE",
       stampNo: "No. 01/1891",
       defaultBadgeTitle: "Central Post Office Badge",
       defaultBadgeSubtitle: "Vaulted Arches & The Message",

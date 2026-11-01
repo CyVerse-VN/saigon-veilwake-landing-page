@@ -23,69 +23,44 @@ interface AudioContextType {
 const AudioContext = createContext<AudioContextType | undefined>(undefined);
 
 export function AudioProvider({ children }: { children: React.ReactNode }) {
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  // Always default to playing on page visit
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [isMuted, setIsMuted] = useState<boolean>(false);
   const [volume, setVolumeState] = useState<number>(0.35);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const isPlayingRef = useRef<boolean>(false);
+  const isPlayingRef = useRef<boolean>(true);
   const wasPlayingBeforeVideo = useRef<boolean>(false);
 
-  // Attempt immediate playback
+  // Attempt playback with fallback for browser autoplay policies
   const attemptPlay = useCallback(() => {
     if (!audioRef.current) return;
-    try {
-      const isMutedPref = localStorage.getItem("veilwake_bgm_disabled");
-      if (isMutedPref === "true") return;
-    } catch {
-      // Ignore
-    }
 
-    if (!isPlayingRef.current) {
-      audioRef.current.volume = volume;
-      const playPromise = audioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            setIsPlaying(true);
-            isPlayingRef.current = true;
-          })
-          .catch(() => {
-            // Autoplay blocked by browser policy without gesture
-          });
-      }
+    audioRef.current.volume = volume;
+    const playPromise = audioRef.current.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsPlaying(true);
+          isPlayingRef.current = true;
+        })
+        .catch(() => {
+          // Browser requires user interaction before unmuted audio playback
+        });
     }
   }, [volume]);
 
   useEffect(() => {
-    // 1. Check if user previously explicitly turned off music
-    let isExplicitlyDisabled = false;
-    try {
-      isExplicitlyDisabled = localStorage.getItem("veilwake_bgm_disabled") === "true";
-    } catch {
-      // Ignore
-    }
-
-    if (isExplicitlyDisabled) {
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-      setIsPlaying(false);
-      isPlayingRef.current = false;
-      return;
-    }
-
-    // 2. Try playing immediately upon page load
+    // 1. Try playing immediately upon page load
     attemptPlay();
 
-    // 3. Fallback: Any slightest user movement or interaction immediately unlocks autoplay
+    // 2. Gesture fallback: Unlocks playback on the very first touch, click, scroll or keypress
     const events = [
       "pointerdown",
       "touchstart",
       "keydown",
       "scroll",
       "wheel",
-      "pointermove",
       "click",
     ];
 
