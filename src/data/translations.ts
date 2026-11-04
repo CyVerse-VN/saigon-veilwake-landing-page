@@ -167,6 +167,7 @@ export const translations = {
       cond4Desc: "Chạm mở camera AR",
       btnShow: "Xem cơ chế kích hoạt AR",
       btnHide: "Thu gọn chi tiết AR",
+      btnTryVara: "Thử đặt Vara trong không gian",
       labelPrototype: "Concept Visualization & Prototype",
       safetyWarningTitle: "Khuyến cáo an toàn thực địa:",
       safetyWarningText:
@@ -333,6 +334,30 @@ export const translations = {
       ctrlAR: "Ống kính AR",
       footerNote:
         "* Kiến trúc điều hướng chuẩn spec: Ký Môn trung tâm mở menu 4 mục, không tạo thanh tab-bar 5 mục tùy tiện.",
+    },
+    arDemo: {
+      eyebrow: "VARA · BẢN THỬ NGHIỆM AR",
+      title: "Mời Vara bước vào không gian của bạn",
+      description:
+        "Xoay để ngắm Vara ở dạng 3D. Trên Chrome Android tương thích, chọn nút AR để đặt bạn đồng hành lên bàn hoặc sàn.",
+      back: "Trở về hành trình",
+      demoBadge: "3D & AR DEMO",
+      loading: "Đang gọi Vara đến…",
+      controlsTitle: "Chọn một động tác",
+      actionIdle: "Lắng nghe thành phố",
+      actionBow: "Cúi chào",
+      actionWings: "Xoay cánh",
+      arButton: "Đặt Vara trong không gian",
+      androidReady: "Thiết bị này có thể mở trải nghiệm đặt Vara bằng AR.",
+      androidHint: "Mở trang này bằng Chrome trên Android tương thích để đặt Vara trong không gian.",
+      iosHint: "Bạn có thể xem Vara 3D tại đây. AR Quick Look cho iPhone sẽ được bổ sung sau.",
+      desktopHint: "Hãy mở trang này trên Chrome Android để thử đặt Vara trong không gian.",
+      fallbackTitle: "Một bản thử nghiệm nhẹ nhàng",
+      fallbackDesc:
+        "Demo này không ghi nhận nhiệm vụ, vị trí hay phần thưởng. Nếu AR chưa khả dụng, bạn vẫn có thể xoay và xem Vara ở dạng 3D.",
+      safetyTitle: "Trải nghiệm an toàn",
+      safetyDesc:
+        "Chỉ dùng AR khi đang đứng yên tại nơi đủ sáng và an toàn; không sử dụng điện thoại khi băng qua đường.",
     },
     portals: {
       badge: "02 · BỐN CÁNH CỔNG KÝ GIỚI",
@@ -565,6 +590,7 @@ export const translations = {
       cond4Desc: "Active AR camera activation",
       btnShow: "View AR Mechanism Details",
       btnHide: "Collapse AR Details",
+      btnTryVara: "Place Vara in your space",
       labelPrototype: "Concept Visualization & Prototype",
       safetyWarningTitle: "Physical Field Safety Notice:",
       safetyWarningText:
@@ -731,6 +757,30 @@ export const translations = {
       ctrlAR: "AR Lens",
       footerNote:
         "* Spec-compliant navigation: Central Ký Môn button reveals a 2x2 menu, never an arbitrary 5-tab bar.",
+    },
+    arDemo: {
+      eyebrow: "VARA · AR PREVIEW",
+      title: "Invite Vara into your space",
+      description:
+        "Rotate to meet Vara in 3D. On a compatible Android Chrome device, choose the AR button to place your companion on a table or floor.",
+      back: "Return to the journey",
+      demoBadge: "3D & AR DEMO",
+      loading: "Calling Vara over…",
+      controlsTitle: "Choose a gesture",
+      actionIdle: "Listening to the city",
+      actionBow: "A gentle bow",
+      actionWings: "Wing swirl",
+      arButton: "Place Vara in your space",
+      androidReady: "This device can open Vara's AR placement experience.",
+      androidHint: "Open this page in Chrome on a compatible Android device to place Vara in your space.",
+      iosHint: "You can explore Vara in 3D here. iPhone AR Quick Look will be added next.",
+      desktopHint: "Open this page in Chrome on Android to try placing Vara in your space.",
+      fallbackTitle: "A gentle preview",
+      fallbackDesc:
+        "This demo never records quests, location, or rewards. If AR is unavailable, you can still rotate and explore Vara in 3D.",
+      safetyTitle: "Enjoy safely",
+      safetyDesc:
+        "Use AR only while stationary in a bright, safe place; never use your phone while crossing a street.",
     },
     portals: {
       badge: "02 · THE FOUR VEIL PORTALS",

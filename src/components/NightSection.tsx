@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Camera, CheckCircle } from "lucide-react";
+import Link from "next/link";
+import { Camera, CheckCircle, Sparkles } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTheme } from "@/context/ThemeContext";
 
@@ -127,12 +128,23 @@ export default function NightSection() {
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
+              <Link
+                href="/ar-demo/vara"
+                className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
+                  isNight
+                    ? "bg-sky-400 text-slate-950 hover:bg-sky-300 shadow-sky-950/35 focus-visible:outline-sky-200"
+                    : "bg-ocean-blue text-white hover:bg-deep-blue shadow-sky-950/15 focus-visible:outline-ocean-blue"
+                }`}
+              >
+                <Sparkles className="w-4 h-4" />
+                <span>{t.night.btnTryVara}</span>
+              </Link>
               <button
                 onClick={() => setShowDetails(!showDetails)}
                 className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-xs sm:text-sm shadow-md transition-all ${
                   isNight
                     ? "bg-amber-100 text-amber-950 hover:bg-white hover:text-slate-950 shadow-lg shadow-black/25 border border-amber-200/60"
-                    : "bg-ocean-blue text-white hover:bg-deep-blue shadow-sky-950/15"
+                    : "bg-white/75 text-deep-blue hover:bg-white shadow-sky-950/10 border border-sky-200/80 focus-visible:outline-ocean-blue"
                 }`}
               >
                 <Camera className={`w-4 h-4 ${isNight ? "text-amber-800" : "text-sky-200"}`} />
