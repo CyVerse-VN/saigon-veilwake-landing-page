@@ -8,7 +8,7 @@ export default function DiscoverSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="cach-choi" className="py-16 sm:py-24 relative">
+    <section id="kham-pha-hem" className="py-16 sm:py-24 relative scroll-mt-12">
       {/* Editorial Chapter Waypoint Bridge */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 mb-10">
         <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-ocean-blue dark:text-sky-300 transition-colors duration-300">

@@ -20,7 +20,7 @@ import { useAudio } from "@/context/AudioContext";
 
 export default function ValueAndShowcaseSection() {
   const [isPlayingDemo, setIsPlayingDemo] = useState(false);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { pauseForVideo, resumeFromVideo } = useAudio();
 
   return (
@@ -36,11 +36,18 @@ export default function ValueAndShowcaseSection() {
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 space-y-16">
         {/* TOP: 3 TOURISM VALUES (ACT 07) */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-deep-blue leading-tight tracking-tight">
-            {t.values.title}
+        <div className="text-center max-w-4xl lg:max-w-5xl mx-auto space-y-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-[2.5rem] xl:text-[2.85rem] font-extrabold font-display text-deep-blue dark:text-white leading-[1.2] tracking-tight text-balance">
+            {language === "vi" ? (
+              <>
+                <span className="inline lg:whitespace-nowrap">Một cách mới</span>{" "}
+                <span className="inline lg:whitespace-nowrap">để trải nghiệm du lịch đô thị</span>
+              </>
+            ) : (
+              t.values.title
+            )}
           </h2>
-          <p className="text-base sm:text-lg text-body-blue/90 leading-relaxed">
+          <p className="text-base sm:text-lg text-body-blue/90 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
             {t.values.subtitle}
           </p>
         </div>

@@ -85,7 +85,7 @@ export const projectTranslations = {
       diff3Desc:
         "Thay vì chỉ nhận ảnh minh họa tĩnh, người chơi được lồng bức ảnh do chính mình chụp vào khung tem lưu niệm độc bản.",
       brandSystemBadge: "Hệ Thống Nhận Diện Thương Hiệu",
-      brandSystemTitle: "Ý Tưởng Biểu Tượng & Linh Vật Kiri",
+      brandSystemTitle: "Ý Tưởng Biểu Tượng & Linh Vật Vara",
       designSystemTag: "Design System SVW-2026",
       elementsHeading: "5 Yếu tố cấu thành Cánh Cổng Ký Môn:",
       el1Title: "Mặt Trời:",
@@ -99,7 +99,7 @@ export const projectTranslations = {
       el5Title: "Ánh Sáng:",
       el5Desc: "Điểm tụ của ký ức, hy vọng và những điều kỳ diệu chưa được kể.",
       mascotBadge: "Linh Vật Đồng Hành",
-      mascotName: "NPC Kiri",
+      mascotName: "NPC Vara",
       mascotDesc:
         "Chú chim nhỏ dẫn dắt du khách qua các câu chuyện văn hóa, tạo cảm giác thân thiện, gắn kết mọi lứa tuổi.",
       appIconBadge: "Biểu Tượng Ứng Dụng",
@@ -229,7 +229,7 @@ export const projectTranslations = {
       diff3Desc:
         "Rather than static stock images, players embed photos they took themselves into authentic commemorative frames.",
       brandSystemBadge: "Brand Identity System",
-      brandSystemTitle: "Emblem Concept & Mascot Kiri",
+      brandSystemTitle: "Emblem Concept & Mascot Vara",
       designSystemTag: "Design System SVW-2026",
       elementsHeading: "5 Elements Composing the Ký Môn Arch Emblem:",
       el1Title: "Sun:",
@@ -243,7 +243,7 @@ export const projectTranslations = {
       el5Title: "Starlight:",
       el5Desc: "The nexus of memories, hope, and wonders waiting to be told.",
       mascotBadge: "Companion Mascot",
-      mascotName: "NPC Kiri",
+      mascotName: "NPC Vara",
       mascotDesc:
         "A friendly little bird guiding travelers through cultural quests, cultivating a warm, engaging atmosphere for all ages.",
       appIconBadge: "Mobile App Icon",

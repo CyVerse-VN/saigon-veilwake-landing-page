@@ -343,8 +343,8 @@ export default function InteractiveAppPreview() {
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center p-0.5 border border-sky-200 overflow-hidden shrink-0">
                       <Image
-                        src="/assets/npc_kiri.png"
-                        alt="NPC Kiri"
+                        src="/assets/npc_vara.png"
+                        alt="NPC Vara"
                         width={30}
                         height={30}
                         className="object-contain"
@@ -352,7 +352,7 @@ export default function InteractiveAppPreview() {
                     </div>
                     <div>
                       <span className="text-xs font-bold text-deep-blue block leading-tight">
-                        Kiri
+                        Vara
                       </span>
                       <span className="text-[9px] text-ocean-blue font-semibold">
                         {t.appPreview.npcCompanion}
@@ -494,8 +494,8 @@ export default function InteractiveAppPreview() {
             >
               <div className="w-8 h-8 rounded-full bg-sky-100 flex items-center justify-center p-0.5 shadow-sm border border-sky-200 overflow-hidden group-hover:scale-105 transition-transform">
                 <Image
-                  src="/assets/npc_kiri.png"
-                  alt="NPC Kiri"
+                  src="/assets/npc_vara.png"
+                  alt="NPC Vara"
                   width={30}
                   height={30}
                   className="object-contain"

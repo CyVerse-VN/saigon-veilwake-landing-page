@@ -8,11 +8,11 @@ import { useTheme } from "@/context/ThemeContext";
 
 export default function NightSection() {
   const [showDetails, setShowDetails] = useState(false);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { isNight } = useTheme();
 
   return (
-    <section className="py-20 sm:py-28 relative overflow-hidden w-full transition-colors duration-500">
+    <section id="lang-kinh-ar" className="py-20 sm:py-28 relative overflow-hidden w-full transition-colors duration-500 scroll-mt-12">
       {/* 
         TWO SEPARATE ATMOSPHERIC COLOR SETS:
         - Day Mode: Seamless luminous daylight transition with subtle dusk twilight & sun-gold orbs
@@ -55,10 +55,17 @@ export default function NightSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           {/* Left Narrative Column */}
           <div className="lg:col-span-7 space-y-6">
-            <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight tracking-tight ${
+            <h2 className={`text-3xl sm:text-4xl lg:text-[2.45rem] xl:text-[2.85rem] font-extrabold font-display leading-[1.2] tracking-tight text-balance ${
               isNight ? "text-white drop-shadow-sm" : "text-deep-blue"
             }`}>
-              {t.night.title}
+              {language === "vi" ? (
+                <>
+                  <span className="inline lg:whitespace-nowrap">Khi đêm xuống,</span>{" "}
+                  <span className="inline lg:whitespace-nowrap">một thế giới khác thức tỉnh</span>
+                </>
+              ) : (
+                t.night.title
+              )}
             </h2>
 
             <p className={`text-base sm:text-lg leading-relaxed max-w-xl ${

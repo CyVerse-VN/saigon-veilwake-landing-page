@@ -375,13 +375,13 @@ export default function ProjectContent() {
                   </div>
                 </div>
 
-                {/* Mascot Kiri + App Icon Showcase */}
+                {/* Mascot Vara + App Icon Showcase */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                   <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-sky-50/70 dark:bg-slate-800/60 border border-sky-100 dark:border-white/10">
                     <div className="w-14 h-14 rounded-full bg-white dark:bg-slate-700 flex items-center justify-center p-1 shrink-0 overflow-hidden shadow-xs">
                       <Image
-                        src="/assets/npc_kiri.png"
-                        alt="NPC Kiri"
+                        src="/assets/npc_vara.png"
+                        alt="NPC Vara"
                         width={50}
                         height={50}
                         className="object-contain"

@@ -25,11 +25,13 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Saigon: Veilwake — Khám phá một Sài Gòn bạn chưa từng thấy",
+  title: "Varabond · Saigon: Veilwake — Khám phá một Sài Gòn bạn chưa từng thấy",
   description:
-    "Trải nghiệm du lịch tương tác đô thị kết hợp AR và di sản văn hóa Sài Gòn. Biến những chuyến tham quan thành hành trình phiêu lưu khám phá văn hóa, lưu giữ kỷ niệm và đánh thức những bí ẩn AR ẩn sau thành phố.",
+    "Trải nghiệm du lịch tương tác đô thị kết hợp AR và di sản văn hóa Sài Gòn cùng linh vật Vara. Biến những chuyến tham quan thành hành trình phiêu lưu khám phá văn hóa, lưu giữ kỷ niệm và đánh thức những bí ẩn AR ẩn sau thành phố.",
   keywords: [
+    "Varabond",
     "Saigon: Veilwake",
+    "Vara",
     "du lịch tương tác",
     "khám phá Sài Gòn",
     "AR du lịch",
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
     "Nhà thờ Đức Bà",
     "HIST 2026",
   ],
-  authors: [{ name: "Saigon: Veilwake Team" }],
+  authors: [{ name: "Varabond · Saigon: Veilwake Team" }],
   icons: {
     icon: "/assets/logo_emblem.png",
     shortcut: "/assets/logo_emblem.png",

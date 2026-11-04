@@ -19,21 +19,42 @@ export default function Header({ onOpenDemo }: { onOpenDemo?: () => void }) {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="relative w-8 h-8 flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
+          <div className="relative w-9 h-9 flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
             <Image
               src="/assets/logo_emblem.png"
-              alt="Saigon: Veilwake Emblem"
-              width={34}
-              height={34}
-              className="object-contain"
+              alt="Vara Mascot Emblem"
+              width={36}
+              height={36}
+              className="object-contain block dark:hidden"
+              priority
+            />
+            <Image
+              src="/assets/logo_emblem_dark.png"
+              alt="Vara Mascot Emblem"
+              width={36}
+              height={36}
+              className="object-contain hidden dark:block"
               priority
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold tracking-wider text-base sm:text-lg text-deep-blue leading-tight">
-              SAIGON: VEILWAKE
-            </span>
-            <span className="text-[10px] tracking-widest uppercase text-body-blue/80 font-medium -mt-0.5">
+            <div className="relative h-6 w-28 sm:w-32 flex items-center">
+              <Image
+                src="/assets/logo_horizontal.png"
+                alt="Varabond"
+                fill
+                className="object-contain object-left block dark:hidden"
+                priority
+              />
+              <Image
+                src="/assets/logo_horizontal_dark.png"
+                alt="Varabond"
+                fill
+                className="object-contain object-left hidden dark:block"
+                priority
+              />
+            </div>
+            <span className="text-[9px] tracking-widest uppercase text-body-blue/80 dark:text-sky-300/80 font-medium -mt-0.5">
               {t.nav.brandTagline}
             </span>
           </div>
@@ -42,13 +63,13 @@ export default function Header({ onOpenDemo }: { onOpenDemo?: () => void }) {
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-body-blue">
           <a
-            href="#trai-nghiem"
+            href="#bon-canh-cong"
             className="hover:text-ocean-blue transition-colors py-1"
           >
             {t.nav.experience}
           </a>
           <a
-            href="#cach-choi"
+            href="#dong-chay"
             className="hover:text-ocean-blue transition-colors py-1"
           >
             {t.nav.howItWorks}
@@ -104,7 +125,7 @@ export default function Header({ onOpenDemo }: { onOpenDemo?: () => void }) {
             )}
           </button>
 
-          {/* Theme Toggle (Day / Night with Fireflies) */}
+          {/* Theme Toggle (Day / Night with 3D Crystal Assets) */}
           <button
             onClick={toggleTheme}
             title={
@@ -116,16 +137,33 @@ export default function Header({ onOpenDemo }: { onOpenDemo?: () => void }) {
                   ? "Đánh thức Ký Giới Ban Đêm"
                   : "Awaken Night Mode"
             }
-            className={`p-2 rounded-full transition-all flex items-center justify-center border shadow-xs ${isNight
-                ? "bg-indigo-950/90 border-indigo-400/60 text-amber-300 hover:scale-105 ring-2 ring-indigo-400/30"
-                : "bg-sky-50 border-sky-border text-indigo-700 hover:text-deep-blue hover:scale-105"
-              }`}
+            className={`p-1.5 rounded-full transition-all flex items-center justify-center border shadow-xs relative group ${
+              isNight
+                ? "bg-indigo-950/90 border-indigo-400/60 ring-2 ring-indigo-400/30 hover:scale-110"
+                : "bg-sky-50/90 border-sky-200/80 hover:bg-white hover:scale-110 shadow-sky-200/50"
+            }`}
             aria-label="Toggle Night Mode"
           >
             {isNight ? (
-              <Sun className="w-4 h-4 text-amber-300" />
+              <div className="relative w-6 h-6 flex items-center justify-center">
+                <Image
+                  src="/assets/Ký hiệu/01_sun_day.png"
+                  alt="Daylight Sun"
+                  width={24}
+                  height={24}
+                  className="object-contain drop-shadow-md group-hover:rotate-45 transition-transform duration-500"
+                />
+              </div>
             ) : (
-              <Moon className="w-4 h-4 text-indigo-700" />
+              <div className="relative w-6 h-6 flex items-center justify-center">
+                <Image
+                  src="/assets/Ký hiệu/02_moon_night.png"
+                  alt="Night Moon"
+                  width={24}
+                  height={24}
+                  className="object-contain drop-shadow-md group-hover:-rotate-12 transition-transform duration-500"
+                />
+              </div>
             )}
           </button>
 
@@ -194,16 +232,32 @@ export default function Header({ onOpenDemo }: { onOpenDemo?: () => void }) {
           {/* Mobile Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className={`p-1.5 rounded-full border transition-all ${isNight
-                ? "bg-indigo-950 border-indigo-400 text-amber-300"
-                : "bg-sky-50 border-sky-border text-indigo-700"
+            className={`p-1 rounded-full border transition-all ${isNight
+                ? "bg-indigo-950 border-indigo-400"
+                : "bg-sky-50 border-sky-border"
               }`}
             aria-label="Toggle Night Mode"
           >
             {isNight ? (
-              <Sun className="w-3.5 h-3.5 text-amber-300" />
+              <div className="relative w-5 h-5 flex items-center justify-center">
+                <Image
+                  src="/assets/Ký hiệu/01_sun_day.png"
+                  alt="Daylight Sun"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+              </div>
             ) : (
-              <Moon className="w-3.5 h-3.5 text-indigo-700" />
+              <div className="relative w-5 h-5 flex items-center justify-center">
+                <Image
+                  src="/assets/Ký hiệu/02_moon_night.png"
+                  alt="Night Moon"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+              </div>
             )}
           </button>
 
@@ -243,14 +297,14 @@ export default function Header({ onOpenDemo }: { onOpenDemo?: () => void }) {
       {mobileMenuOpen && (
         <div className="md:hidden border-b border-sky-border dark:border-white/10 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3 shadow-lg animate-in slide-in-from-top-2 duration-200">
           <a
-            href="#trai-nghiem"
+            href="#bon-canh-cong"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 rounded-lg text-base font-medium text-deep-blue hover:bg-sky-50 dark:hover:bg-slate-800"
           >
             {t.nav.experience}
           </a>
           <a
-            href="#cach-choi"
+            href="#dong-chay"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 rounded-lg text-base font-medium text-deep-blue hover:bg-sky-50 dark:hover:bg-slate-800"
           >

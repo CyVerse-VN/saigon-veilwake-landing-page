@@ -15,20 +15,38 @@ export default function Footer() {
           {/* Logo & Tagline */}
           <div className="flex flex-col items-center gap-2">
             <div className="flex items-center gap-2.5">
-              <div className="relative w-8 h-8 flex items-center justify-center">
+              <div className="relative w-9 h-9 flex items-center justify-center">
                 <Image
                   src="/assets/logo_emblem.png"
-                  alt="Saigon: Veilwake Emblem"
-                  width={34}
-                  height={34}
-                  className="object-contain"
+                  alt="Vara Mascot Emblem"
+                  width={36}
+                  height={36}
+                  className="object-contain block dark:hidden"
+                />
+                <Image
+                  src="/assets/logo_emblem_dark.png"
+                  alt="Vara Mascot Emblem"
+                  width={36}
+                  height={36}
+                  className="object-contain hidden dark:block"
                 />
               </div>
-              <span className="font-bold tracking-wider text-xl text-deep-blue">
-                SAIGON: VEILWAKE
-              </span>
+              <div className="relative h-7 w-32 flex items-center">
+                <Image
+                  src="/assets/logo_horizontal.png"
+                  alt="Varabond"
+                  fill
+                  className="object-contain object-left block dark:hidden"
+                />
+                <Image
+                  src="/assets/logo_horizontal_dark.png"
+                  alt="Varabond"
+                  fill
+                  className="object-contain object-left hidden dark:block"
+                />
+              </div>
             </div>
-            <p className="text-xs uppercase tracking-widest text-body-blue font-semibold">
+            <p className="text-xs uppercase tracking-widest text-body-blue dark:text-sky-300 font-semibold">
               {t.footer.tagline}
             </p>
           </div>
