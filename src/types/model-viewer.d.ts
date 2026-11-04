@@ -25,6 +25,8 @@ declare global {
         src?: string;
         "shadow-intensity"?: string;
         "touch-action"?: string;
+        loading?: "auto" | "lazy" | "eager";
+        ref?: React.Ref<any>;
       };
     }
   }
