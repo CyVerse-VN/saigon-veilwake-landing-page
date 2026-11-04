@@ -20,9 +20,12 @@ import { useTheme } from "@/context/ThemeContext";
 type Platform = "android" | "ios" | "desktop";
 
 const clips = [
-  { id: "Idle_3", label: "actionIdle" },
-  { id: "Gentlemans_Bow", label: "actionBow" },
-  { id: "Arm_Circle_Shuffle", label: "actionWings" },
+  { id: "Idle_3", label: "actionIdle", icon: "✨" },
+  { id: "Gentlemans_Bow", label: "actionBow", icon: "👋" },
+  { id: "Arm_Circle_Shuffle", label: "actionWings", icon: "🪽" },
+  { id: "Gangnam_Groove", label: "actionGangnam", icon: "🕺" },
+  { id: "Breakdance_1990", label: "actionBreakdance", icon: "🤸" },
+  { id: "Cardio_Dance", label: "actionCardio", icon: "🎉" },
 ] as const;
 
 function detectPlatform(): Platform {
@@ -52,6 +55,7 @@ export default function VaraArDemo() {
   const [progress, setProgress] = useState(0);
   const [loadError, setLoadError] = useState(false);
   const [canAr, setCanAr] = useState<boolean | null>(null);
+  const [arStatus, setArStatus] = useState<string>("not-presenting");
 
   useEffect(() => {
     setPlatform(detectPlatform());
@@ -90,7 +94,11 @@ export default function VaraArDemo() {
       setReady(true);
     };
 
-    const handleArStatus = () => {
+    const handleArStatus = (event: Event) => {
+      const status = (event as CustomEvent)?.detail?.status;
+      if (status) {
+        setArStatus(status);
+      }
       checkArCapability();
     };
 
@@ -123,6 +131,26 @@ export default function VaraArDemo() {
       viewer.removeEventListener("ar-status", handleArStatus);
     };
   }, []);
+
+  const handleSelectClip = (clipId: (typeof clips)[number]["id"]) => {
+    setActiveClip(clipId);
+    const viewer = viewerRef.current;
+    if (viewer) {
+      // @ts-expect-error model-viewer animationName property
+      viewer.animationName = clipId;
+      // @ts-expect-error model-viewer play method
+      if (typeof viewer.play === "function") {
+        // @ts-expect-error model-viewer play method
+        viewer.play();
+      }
+    }
+  };
+
+  const handleNextClip = () => {
+    const currentIndex = clips.findIndex((c) => c.id === activeClip);
+    const nextIndex = (currentIndex + 1) % clips.length;
+    handleSelectClip(clips[nextIndex].id);
+  };
 
   const handleLaunchAr = () => {
     const viewer = viewerRef.current;
@@ -257,7 +285,7 @@ export default function VaraArDemo() {
               </div>
             </div>
 
-            {/* Primary AR Launch Button - Always visible & prominent */}
+            {/* Primary AR Launch Button */}
             <div className="space-y-2">
               <button
                 type="button"
@@ -277,27 +305,38 @@ export default function VaraArDemo() {
               </button>
             </div>
 
-            {/* 3D Animation Gestures */}
+            {/* 3D & AR Action Gestures Selection */}
             <div>
-              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-ocean-blue dark:text-sky-300">
-                {t.arDemo.controlsTitle}
-              </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="mb-3 flex items-center justify-between">
+                <p className="text-xs font-bold uppercase tracking-widest text-ocean-blue dark:text-sky-300">
+                  {t.arDemo.controlsTitle}
+                </p>
+                <button
+                  type="button"
+                  onClick={handleNextClip}
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-ocean-blue hover:underline dark:text-sky-300"
+                >
+                  <RotateCcw className="h-3 w-3" />
+                  <span>{t.arDemo.arNextAction}</span>
+                </button>
+              </div>
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {clips.map((clip) => {
                   const selected = activeClip === clip.id;
                   return (
                     <button
                       key={clip.id}
                       type="button"
-                      onClick={() => setActiveClip(clip.id)}
+                      onClick={() => handleSelectClip(clip.id)}
                       aria-pressed={selected}
-                      className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
+                      className={`flex items-center gap-1.5 rounded-2xl border px-3 py-2.5 text-xs font-bold transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
                         selected
-                          ? "border-ocean-blue bg-ocean-blue text-white shadow-card focus-visible:outline-ocean-blue"
+                          ? "border-ocean-blue bg-ocean-blue text-white shadow-card focus-visible:outline-ocean-blue scale-[1.02]"
                           : "border-sky-200/80 bg-white/60 text-deep-blue hover:border-ocean-blue/50 hover:bg-white/85 focus-visible:outline-ocean-blue dark:border-white/15 dark:bg-white/5 dark:text-slate-100 dark:hover:bg-white/10 dark:focus-visible:outline-sky-300"
                       }`}
                     >
-                      {t.arDemo[clip.label]}
+                      <span className="text-sm">{clip.icon}</span>
+                      <span className="truncate">{t.arDemo[clip.label]}</span>
                     </button>
                   );
                 })}
@@ -380,6 +419,59 @@ export default function VaraArDemo() {
                   <Box className="h-4 w-4" />
                   <span>{t.arDemo.arButton}</span>
                 </button>
+
+                {/* WebXR In-AR Live Action Overlay: rendered on top of camera feed in WebXR! */}
+                <div
+                  className={`absolute inset-x-3 bottom-5 z-20 flex flex-col items-center gap-2 transition-all duration-300 pointer-events-auto ${
+                    arStatus === "session-started" ? "flex" : "hidden"
+                  }`}
+                >
+                  {/* Current Active Indicator & Quick Next Button */}
+                  <div className="flex items-center gap-2 rounded-full border border-white/30 bg-slate-950/85 px-4 py-1.5 shadow-xl backdrop-blur-md text-white text-xs">
+                    <span className="font-medium text-amber-300">
+                      {t.arDemo.arPlayingAction}{" "}
+                      <span className="font-bold text-white">
+                        {t.arDemo[clips.find((c) => c.id === activeClip)?.label ?? "actionIdle"]}
+                      </span>
+                    </span>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleNextClip();
+                      }}
+                      className="ml-2 inline-flex items-center gap-1 rounded-full bg-ocean-blue px-2.5 py-0.5 text-[11px] font-bold text-white shadow-sm hover:bg-teal transition-colors"
+                    >
+                      <RotateCcw className="h-3 w-3" />
+                      <span>{t.arDemo.arNextAction}</span>
+                    </button>
+                  </div>
+
+                  {/* Horizontal Scrollable Action Chips on Camera */}
+                  <div className="flex max-w-full items-center gap-1.5 overflow-x-auto py-1 px-2 rounded-2xl bg-slate-950/75 backdrop-blur-md border border-white/25 shadow-2xl">
+                    {clips.map((clip) => {
+                      const selected = activeClip === clip.id;
+                      return (
+                        <button
+                          key={clip.id}
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleSelectClip(clip.id);
+                          }}
+                          className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-bold transition-all ${
+                            selected
+                              ? "bg-gradient-to-r from-ocean-blue to-teal text-white shadow-md scale-105"
+                              : "bg-white/20 text-white hover:bg-white/35 active:scale-95"
+                          }`}
+                        >
+                          <span className="mr-1">{clip.icon}</span>
+                          <span>{t.arDemo[clip.label]}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
               </model-viewer>
 
               <div className="absolute inset-x-6 bottom-5 z-[2] flex justify-end pointer-events-none">
